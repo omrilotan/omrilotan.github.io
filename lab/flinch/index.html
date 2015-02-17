@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+        <title>flinch: Swipe detection</title>
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="flinch.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="example">
+            <br />
+            <br />
+            <br />
+            <span id="message" class="message">
+                &#9787;
+            </span>
+            <br />
+            <h1>Flinch me left and right</h1>
+            <br />
+            Last event<br /><input id="lastEvent" type="text" disabled />
+            <br />
+            <br />
+            <br />
+            * flinch down to see how to use this
+        </div>
+<pre>flinch(DOM_ELEMENT,
+  {
+    "left":  function (event) { /* YOUR_REACTION */ },
+    "right": function (event) { /* YOUR_REACTION */ },
+    "up":    function (event) { /* YOUR_REACTION */ },
+    "down":  function (event) { /* YOUR_REACTION */ },
+    "tap":   function (event) { /* YOUR_REACTION */ }
+  });
+// Optional third argument is an options object:
+{
+  minLength: 72,    // the shortest distance the user may swipe
+  tapSensitivity: 22,    // within tap limits
+  mouseEvents: true,    // Include non-touch mouse events
+  preventDefault: false
+}
+  </pre>
+        <script src="flinch.js"></script>
+        <script>
+var lastEventIndicator = document.getElementById("lastEvent");
+flinch(document.body,
+    {
+        "left": function () {
+            document.body.classList.add("left");
+            document.body.classList.remove("right");
+            lastEventIndicator.value = "flinch left";
+        },
+        "right": function () {
+            document.body.classList.add("right");
+            document.body.classList.remove("left");
+            lastEventIndicator.value = "flinch right";
+        },
+        "up": function () {
+            document.body.classList.remove("showcode");
+            lastEventIndicator.value = "flinch up";
+        },
+        "down": function () {
+            document.body.classList.add("showcode");
+            lastEventIndicator.value = "flinch down";
+        },
+        "tap": function (event) {
+            document.body.classList.remove("right");
+            document.body.classList.remove("left");
+            lastEventIndicator.value = "tap";
+        }
+    },
+    {
+        mouseEvents: true
+    });
+        </script>
+    </body>
+</html>
