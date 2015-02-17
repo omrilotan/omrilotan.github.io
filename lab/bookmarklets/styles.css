@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+* {
+    -webkit-transition:all 1.5s cubic-bezier(.5, -.5, .5, 1.5);
+       -moz-transition:all 1.5s cubic-bezier(.5, -.5, .5, 1.5);
+        -ms-transition:all 1.5s cubic-bezier(.5, -.5, .5, 1.5);
+         -o-transition:all 1.5s cubic-bezier(.5, -.5, .5, 1.5);
+            transition:all 1.5s cubic-bezier(.5, -.5, .5, 1.5);
+}
+html, body {
+    margin:0; padding:0;
+    height:100%;
+    font:normal 12px/24px "Open Sans";
+    background:#ecf0f1;
+}
+@media (max-width: 768px) {
+    html, body {
+        font:normal 16px/21px "Open Sans";
+    }
+    pre {
+        font-size:13px;
+    }
+}
+h1 {
+    font-weight:normal;
+    color:#9b59b6;
+}
+input {
+    background:rgba(255, 255, 255, .5);
+    border:1px solid #9b59b6;
+    font:normal 1em/2em "Open Sans";
+}
+.halfer {
+    display:inline-block;
+    text-align:center;
+    width:50%;
+}
+.halfer label {
+    width:100px;
+}
+.halfer input {
+    text-indent:3px;
+    width:calc(100% - 100px);
+}
+li {
+    margin:0 0 .2em 0;
+}
+li a {
+    display:inline-block;
+    padding:0 6px;
+    background:#eee;
+    text-decoration:none;
+    color:#454545;
+    border-radius:3px;
+    border:1px solid #999;
+}
+li input {
+    margin:0 2px;
+    text-align:center;
+}
