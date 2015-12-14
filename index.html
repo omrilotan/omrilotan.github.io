@@ -3,12 +3,172 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
-        <title>Stuff</title>
-        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <link href="flinch.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes, minimal-ui" />
+        <title>☕</title>
+        <meta name="description" content="The hardest part is naming things" />
+
+        <link href="data:image/x-icon;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" rel="shortcut icon" type="image/x-icon" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <meta http-equiv="Cache-Control" content="no-cache"/>
+        <meta name="googlebot" content="noindex" />
+        <meta name="robots" content="noindex" />
+        <style>
+body {
+    color:#454545;
+}
+h1, h2, h3, h4 {
+    font-weight:normal;
+}
+h1::first-letter,
+h2::first-letter,
+h3::first-letter,
+h4::first-letter,
+p::first-letter,
+li::first-letter {
+    text-transform:capitalize;
+}
+blockquote {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before { content: open-quote; }
+blockquote:after  { content: close-quote; }
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+td {
+    border:1px solid #aaa;
+    vertical-align:top;
+}
+td input {
+    width:100%;
+    box-sizing:border-box;
+}
+.repos img {
+    vertical-align: middle;
+    width: 1em;
+    margin-right: .5em;
+}
+        </style>
     </head>
     <body>
-        <a href="lab/">Lab</a>
+        <header>
+            <blockquote>The hardest part is naming things</blockquote>
+        </header>
+        <main>
+            <article>
+                <h1>Base64 text converter:</h1>
+                <div style="width:50%; float:left;">
+                    Text: <input style="width:100%; box-sizing:border-box;" type="text" id="txt_atob" />
+                </div><div style="overflow:auto;">
+                    Base64: <input style="width:100%; box-sizing:border-box;" type="text" id="txt_btoa" />
+                </div>
+                <script>
+(function () {
+    var txt_atob = document.getElementById("txt_atob"),
+        txt_btoa = document.getElementById("txt_btoa");
+    txt_atob.onchange = txt_atob.onkeyup = function () {
+        txt_btoa.value = btoa(txt_atob.value);
+    };
+    txt_btoa.onchange = txt_btoa.onkeyup = function () {
+        txt_atob.value = atob(txt_btoa.value);
+    };
+}());
+                </script>
+            </article>
+            <article>
+                <h1><a target="googlethat" href="http://google.com/search?q=bookmarklet">bookmarklets</a></h1>
+                <h4>Drag the one you like to your Bookmark Bar</h4>
+                <ul>
+                    <li>
+                        <a role="bookmarklet" href="javascript:location.href='mailto:?SUBJECT='+document.title+'&BODY='+escape(location.href);">Send Page</a>
+                        &mdash; Send the page you're viewing as an E-mail
+                    </li>
+                    <li>
+                        <a role="bookmarklet" href="javascript:document.body.contentEditable=true;document.body.spellcheck=false;document.designMode='on';void(0);">Edit this page</a>
+                        &mdash; Make the page you're viewing editable
+                    </li>
+                    <li>
+                        <a role="bookmarklet" href='javascript:[].forEach.call(document.querySelectorAll("*[type=\"password\"]"),function(e){e.setAttribute("type","text")});void(0);'>Show passwords</a>
+                        &mdash; Show the passwords instead of bullets. Example: <input type="password" value="12345" style="width:100px;" />
+                    </li>
+                    <li>
+                        <a role="bookmarklet" href='javascript:var p=[],c=0,s;[].forEach.call(document.querySelectorAll("*[type=\"password\"]"),function(e,t){p.push(++t+") "+e.value);c=t});s=c+" passwords on page:\n"+p.join("\n");alert(s);console.log(s);void(0);'>List passwords</a>
+                        &mdash; Create a list from all passwords on page:
+                        <input type="password" value="a" style="width:20px;" /><input type="password" value="b" style="width:20px;" /><input type="password" value="c" style="width:20px;" /><input type="password" value="d" style="width:20px;" /><input type="password" value="e" style="width:20px;" /><input type="password" value="f" style="width:20px;" /><input type="password" value="g" style="width:20px;" /><input type="password" value="h" style="width:20px;" />
+                    </li>
+                    <li>
+                        <a role="bookmarklet" href='javascript:var d=document,e=d.createElement("style"),i=" !important",v="*{color:#afa"+i+";background-color:#333"+i+";border-color:#afa"+i+";font-family:monospace"+i+";font-size:12px"+i+";}";try{e.styleSheet.cssText=v;}catch(r){e.appendChild(d.createTextNode(v));}d.head.appendChild(e);void(0);'>Terminal View</a>
+                        &mdash; Turn all texts on page bright, and all backgrounds dark
+                    </li>
+                    <li>
+                        <a role="bookmarklet" href='javascript:window.onbeforeunload=function(){return"wat!"};void(0);'>Ask before unload</a>
+                        &mdash; Against annoying auto-reloading websites (really, are we in the 90's?)
+                    </li>
+                    <li>
+                        <a role="bookmarklet" href='javascript:var f,g,a=document.getElementsByTagName("link");[].forEach.call(a,function(e){if(e.rel.toLowerCase().match(/stylesheet/)&&e.href){g=e.href.replace(/(&|%5C?)now=\d+/,"");e.href=g+(g.match(/\?/)?"&":"?")+"now="+(new Date()).getTime()}});void(0);'>Refresh stylesheets</a>
+                        &mdash; Refresh stylesheets loaded as a link rel
+                    </li>
+                    <li>
+                        <a role="bookmarklet" href='javascript: window.open("data:text/html, <html contenteditable style=\"background:#333; color:#ddd; font:normal 14px/18px monospace;\">")'>Scratch-pad</a>
+                        &mdash; Open a quick editable empty document
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h1>One transparent pixel</h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">all</td>
+                            <td>
+                                <input type="text" value="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" value="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs=" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chrome & Firefox</td>
+                            <td>
+                                <input type="text" value="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chrome</td>
+                            <td>
+                                <input type="text" value="data:image/gif;base64,R0lGODlhAQABAAAAACw=" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article>
+                <h1>Window location:</h1>
+                <form id="gotoform">
+                    <input type="url" id="gotourl" value="http://" style="width:50%;" />
+                    <button type="submit">Let's go</button>
+                </form>
+                <script>
+document.getElementById("gotoform").addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    window.location = document.getElementById('gotourl').value;
+});
+                </script>
+            </article>
+            <article id="repos">
+                <h1>Repositories</h1>
+            </article>
+            <article id="repos">
+                <h1>Stuff</h1>
+                <a href="lab/">Lab</a>
+            </article>
+        </main>
+        <script src="loadr.js"></script>
+        <script src="googlethat.js"></script>
+        <script src="profile.js"></script>
     </body>
 </html>
