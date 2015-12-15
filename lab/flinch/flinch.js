@@ -11,7 +11,7 @@
 //     preventDefault: true
 // });
 
-var flinch = (function __flinch__ () {
+var flinch = (function __flinch__ (window) {
     "use strict";
     var getTarget = function _getTarget (event) {
             event = event || window.event;
@@ -32,28 +32,28 @@ var flinch = (function __flinch__ () {
 
         defaults = {
             options: {
-                fingerCount: 1,
-                minLength: 72,    // the shortest distance the user may swipe
+                fingerCount   : 1,
+                minLength     : 72,    // the shortest distance the user may swipe
                 tapSensitivity: 22,    // within tap limits
-                mouseEvents: true,    // Include non-touch mouse events
+                mouseEvents   : true,  // Include non-touch mouse events
                 preventDefault: false
             },
             movements: {
                 triggerElement: null,    // identify the triggering element
-                startX: 0,
-                startY: 0,
-                curX: 0,
-                curY: 0,
-                swipeLength: 0,
-                swipeAngle: null,
+                startX        : 0,
+                startY        : 0,
+                curX          : 0,
+                curY          : 0,
+                swipeLength   : 0,
+                swipeAngle    : null,
                 swipeDirection: null
             },
             routines: {
-                "left": null,
-                "right": null,
-                "up": null,
-                "down": null,
-                "tap": null
+                left : null,
+                right: null,
+                up   : null,
+                down : null,
+                tap  : null
             }
         },
         helpers = {
@@ -197,12 +197,12 @@ var flinch = (function __flinch__ () {
         this.events.forEach(function listener (eventName) {
             listen(that.element, eventName, that.method);
         });
+        return this;
     };
 
     return function flinch (element, routines, options) {
         var rub = new TouchListener(element, routines, options);
-        rub.listen();
-        return rub;
+        return rub.listen();
     };
-}());
+}(window));
 

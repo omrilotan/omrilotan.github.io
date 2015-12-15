@@ -124,21 +124,25 @@ pre {
             <br />
             * flinch down to see how to use this
         </div>
-<pre>flinch(DOM_ELEMENT,
+<pre>flinch(
+// First argument is the DOM element on which to listen to flinch events
+  DOM_ELEMENT,
+// Second argument is an object representation of the different callbacks:
   {
-    "left":  function (event) { /* YOUR_REACTION */ },
+    "left" : function (event) { /* YOUR_REACTION */ },
     "right": function (event) { /* YOUR_REACTION */ },
-    "up":    function (event) { /* YOUR_REACTION */ },
-    "down":  function (event) { /* YOUR_REACTION */ },
-    "tap":   function (event) { /* YOUR_REACTION */ }
-  });
-// Optional third argument is an options object:
-{
-  minLength: 72,    // the shortest distance the user may swipe
-  tapSensitivity: 22,    // within tap limits
-  mouseEvents: true,    // Include non-touch mouse events
-  preventDefault: false
-}
+    "up"   : function (event) { /* YOUR_REACTION */ },
+    "down" : function (event) { /* YOUR_REACTION */ },
+    "tap"  : function (event) { /* YOUR_REACTION */ }
+  },
+// Optional third argument is an options object (following values are defaults):
+  {
+    minLength     : 72,    // the shortest distance the user may swipe
+    tapSensitivity: 22,    // within tap limits
+    mouseEvents   : true,  // Include non-touch mouse events
+    preventDefault: false
+  }
+);
   </pre>
         <script src="flinch.js"></script>
         <script>
