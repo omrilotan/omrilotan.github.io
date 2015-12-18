@@ -3,8 +3,8 @@
 //
 // loadr("styles/text", @String css);
 // loadr("styles/rules", @Object styles);
-// loadr("styles/file", @String URL, @Function callback);
-// loadr("styles/files", @String URL, @Function callback);
+// loadr("styles/file", @String URL);
+// loadr("styles/files", @String URL);
 // loadr("script/text", @String script);
 // loadr("script/file", @String URL, @Function callback);
 // loadr("script/files", @String URL, @Function callback);
@@ -70,9 +70,10 @@ var loadr = (function __loadr__ (doc, FUNCTION, OBJECT, STRING) {
             return element;
         },
         css_rules = function loadr$css_rules (content) {
-            var sheet = typeof doc.styleSheets === OBJECT &&
-                    doc.styleSheets.length > 0 ?
-                    doc.styleSheets[0] :
+            var styleSheets = doc.styleSheets,
+                sheet = typeof styleSheets === OBJECT &&
+                    styleSheets.length > 0 ?
+                    styleSheets[0] :
                     css_element(),
                 name;
             for (name in content) {
@@ -81,21 +82,11 @@ var loadr = (function __loadr__ (doc, FUNCTION, OBJECT, STRING) {
                 }
             }
         },
-        css_reference = function loadr$css_reference (content, callback) {
-            var element = css_create(content);
-            element.onload = callback;
-            doc.head.appendChild(element);
+        css_reference = function loadr$css_reference (content) {
+            doc.head.appendChild(css_create(content));
         },
         css_references = function loadr$css_references (array, callback) {
-            var loaded = 0;
-            array.forEach(function loadr$css_referencesArray (item) {
-                css_reference(item, function loadr$_CSS$referencesAdd () {
-                    loaded++;
-                    if (loaded === array.length && typeof callback === FUNCTION) {
-                        callback();
-                    }
-                });
-            });
+            array.forEach(css_reference);
         },
 
         js_create = function loadr$js_create (url) {

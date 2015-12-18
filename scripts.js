@@ -32,8 +32,9 @@ var xhrCall = function xhrCall (url, options) {
 (function () {
 
     var bitBucketRepos = function (name, image, response) {
-        var data = JSON.parse(response),
-            list = document.createElement("ul");
+        var data  = JSON.parse(response),
+            list  = document.createElement("ul"),
+            repos = document.getElementById("repos");
 
         list.className = "repos";
 
@@ -51,8 +52,8 @@ var xhrCall = function xhrCall (url, options) {
             list.appendChild(li);
         });
 
-        document.getElementById("repos").appendChild(list);
-
+        repos.appendChild(list);
+        repos.parentNode.removeAttribute("style");
     };
 
     var bitBucketProfile = function (response) {
@@ -78,4 +79,13 @@ var xhrCall = function xhrCall (url, options) {
         headers: [{ name: "Content-Type", value: "text/plain" }],
         callback: bitBucketProfile
     });
+}());
+
+(function () {
+    if (!window.console || !console.log) { return; }
+    console.log("%cHey there, good to see you.\n\n%cFeel free to contact me at %comri@hamadgera.com%c\n\n\n",
+        "font:normal 14px/18px monospace; color:#900;",
+        "",
+        "font:normal 12px/16px monospace; color:#ccc; background:#444; padding:.25em .5em; border-radius:3px;",
+        "");
 }());
