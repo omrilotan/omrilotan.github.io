@@ -1,3 +1,13 @@
+(function () {
+    var okay = false;
+    [].forEach.call(arguments, function (item) {
+        okay = window.location.host === "" || ~window.location.host.indexOf(item) ? true : okay;
+    });
+    if (!okay) {
+        window.location = "http://omrilotan.com";
+    }
+}("omrilotan.com", "localhost", "127.0.0.1"));
+
 var xhrCall = function xhrCall (url, options) {
     var XHR = new XMLHttpRequest();
 
