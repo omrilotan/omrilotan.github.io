@@ -42,6 +42,7 @@ var xhrCall = function xhrCall (url, options) {
 (function () {
 
     var bitBucketRepos = function (name, image, response) {
+        if (!response) { return; }
         var data  = JSON.parse(response),
             list  = document.createElement("ul"),
             repos = document.getElementById("repos");
