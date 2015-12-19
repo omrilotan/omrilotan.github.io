@@ -1,41 +1,4 @@
 var googlethat = (function __googlethat__() {
-    var styles = [
-            "#googlethat{",
-            "position:absolute;",
-            "z-index:9999;",
-            "top:50px;",
-            "left:10%;",
-            "width:80%;",
-            "outline:0;",
-            "box-sizing:border-box;",
-            "font-size:24px;",
-            "line-height:50px;",
-            "border:20px solid #fff;",
-            "box-shadow:0 0 100px rgba(0,0,0,.3);",
-            "border:0;",
-            "padding:0 .5em 0 130px;",
-            "background:#fff url(http://www.google.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png) 10px bottom no-repeat;",
-            "background-size:auto 42px;",
-            "color:#000;",
-            "opacity:1;",
-            "transition:all .3s ease-in;",
-            "}",
-            "#googlethat.opaque{",
-            "opacity:0;",
-            "}",
-            "a[target=\"googlethat\"]:after{",
-            "display:inline-block;",
-            "content:\"🔍\";",
-            "vertical-align:top;",
-            "font-size:.5em;",
-            "line-height:1em;",
-            "width:1em;",
-            "text-align:center;",
-            "border-radius:50%;",
-            "}"
-        ].join("");
-    loadr("styles/text", styles);
-
     var search = function (href) {
         var start = href.indexOf("q=") + 2,
             end   = href.indexOf("&") > -1 ? href.indexOf("&") : href.length,
@@ -76,6 +39,9 @@ var googlethat = (function __googlethat__() {
 
             evt.preventDefault();
             var href = target.getAttribute("href");
+            if (target.getAttribute("data-lucky") === "true") {
+                href += "&btnI=I%27m+Feeling+Lucky";
+            }
             search(href);
         }
     });

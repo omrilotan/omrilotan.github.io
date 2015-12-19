@@ -45,10 +45,42 @@ td input {
     width:100%;
     box-sizing:border-box;
 }
-.repos img {
-    vertical-align: middle;
-    width: 1em;
-    margin-right: .5em;
+
+/* ----------- */
+/* Google That */
+/* ----------- */
+#googlethat {
+    position:fixed;
+    z-index:9999;
+    top:50px;
+    left:10%;
+    width:80%;
+    outline:0;
+    box-sizing:border-box;
+    font-size:24px;
+    line-height:50px;
+    border:20px solid #fff;
+    box-shadow:0 0 100px rgba(0,0,0,.3);
+    border:0;
+    padding:0 .5em 0 130px;
+    background:#fff url(http://www.google.com/images/branding/googlelogo/2x/googlelogo_color_116x41dp.png) 10px bottom no-repeat;
+    background-size:auto 42px;
+    color:#000;
+    opacity:1;
+    transition:all .3s ease-in;
+}
+#googlethat.opaque {
+    opacity:0;
+}
+a[target="googlethat"]:after {
+    display:inline-block;
+    content:"🔍";
+    vertical-align:top;
+    font-size:.5em;
+    line-height:1em;
+    width:1em;
+    text-align:center;
+    border-radius:50%;
 }
         </style>
     </head>
@@ -78,7 +110,7 @@ td input {
                 </script>
             </article>
             <article>
-                <h1><a target="googlethat" href="http://google.com/search?q=bookmarklet">bookmarklets</a></h1>
+                <h1><a target="googlethat" href="http://google.com/search?q=bookmarklet" data-lucky="true">bookmarklets</a></h1>
                 <h4>Drag the one you like to your Bookmark Bar</h4>
                 <ul>
                     <li>
@@ -159,12 +191,16 @@ document.getElementById("gotoform").addEventListener("submit", function (evt) {
 });
                 </script>
             </article>
-            <article style="display:none;">
-                <h1>Repositories</h1>
-                <div id="repos"></div>
-            </article>
             <article>
-                <h2>Lab</h2>
+                <h1>Repositories</h1>
+                <ul>
+                    <li>
+                        <a href="https://bitbucket.org/omrilotan/">@ BitBucket</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/omrilotan">@ GitHub</a>
+                    </li>
+                </ul>
                 <ul>
                     <li>
                         <a href="http://omrilotan.github.io/bulletin/">bulletin: Tray notification</a>
@@ -178,7 +214,6 @@ document.getElementById("gotoform").addEventListener("submit", function (evt) {
                 </ul>
             </article>
         </main>
-        <script src="loadr.js"></script>
         <script src="googlethat.js"></script>
         <script src="scripts.js"></script>
     </body>
