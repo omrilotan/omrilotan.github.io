@@ -17,3 +17,9 @@
         "font:normal 12px/16px monospace; color:#ccc; background:#444; padding:.25em .5em; border-radius:3px;",
         "");
 }());
+
+(function (collection) {
+    [].forEach.call(collection, function (item) {
+        item.addEventListener('focus', item.select);
+    });
+}(document.querySelectorAll("input[autohighlight], textarea[autohighlight]")));
