@@ -128,26 +128,6 @@ a[target="googlethat"]:after {
                 </ul>
             </article>
             <article>
-                <h1>Base64 text converter:</h1>
-                <div style="width:50%; float:left;">
-                    Text: <input style="width:100%; box-sizing:border-box;" type="text" id="txt_atob" />
-                </div><div style="overflow:auto;">
-                    Base64: <input spellcheck="false" style="width:100%; box-sizing:border-box;" type="text" id="txt_btoa" />
-                </div>
-                <script>
-(function () {
-    var txt_atob = document.getElementById("txt_atob"),
-        txt_btoa = document.getElementById("txt_btoa");
-    txt_atob.onchange = txt_atob.onkeyup = function () {
-        txt_btoa.value = btoa(txt_atob.value);
-    };
-    txt_btoa.onchange = txt_btoa.onkeyup = function () {
-        txt_atob.value = atob(txt_btoa.value);
-    };
-}());
-                </script>
-            </article>
-            <article>
                 <h1>Code</h1>
                 <blockquote>The hardest part is naming things</blockquote>
                 <ul>
