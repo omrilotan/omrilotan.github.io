@@ -14,30 +14,28 @@
         <meta name="googlebot" content="noindex" />
         <meta name="robots" content="noindex" />
         <style>
-html {
-    height: 100%;
-}
+html { height: 100%; }
 body {
     margin: 0;
-    color:#454545;
+    color: #454545;
+    display: flex;
+    min-height: 100%;
 }
-h1, h2, h3, h4 {
+@media (max-width: 960px) {
+    body { flex-direction: column; }
+}
+
+main, aside { padding: 2em; }
+main  { flex-grow: 1; }
+aside { flex-grow: 0; min-width: 200px; }
+h1 {
     font-weight:normal;
 }
 h1::first-letter,
-h2::first-letter,
-h3::first-letter,
-h4::first-letter,
 p::first-letter,
 li::first-letter {
     text-transform:capitalize;
 }
-blockquote {
-    quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote:before { content: open-quote; }
-blockquote:after  { content: close-quote; }
-
 .profile-image {
     width: 150px;
     height: 150px;
@@ -51,19 +49,6 @@ blockquote:after  { content: close-quote; }
     width:100%;
     margin: 0 0 1em;
 }
-
-body {
-    display: flex;
-    min-height: 100%;
-}
-    @media (max-width: 960px) {
-        body { flex-direction: column; }
-    }
-main  { flex-grow: 1; }
-aside { flex-grow: 0; }
-
-main, aside { padding: 2em; }
-aside { min-width: 200px; }
         </style>
     </head>
     <body>
@@ -92,54 +77,15 @@ aside { min-width: 200px; }
         </aside>
         <main>
             <article>
-                <h1>Me on</h1>
+                <h1>clickables</h1>
                 <ul>
                     <li><a href="https://github.com/omrilotan">Code</a></li>
-                    <li><a href="https://medium.com/@omrilotan">Word</a></li>
+                    <li><a href="https://medium.com/@omrilotan">Words</a></li>
+                    <li><a href="bookmarklets">bookmarklets</a></li>
 
                 </ul>
             </article>
-            <article>
-                <h1>bookmarklets <small><a target="googlethat" href="http://google.com/search?q=bookmarklet" data-lucky="true">what's a bookmarklet?</a></small></h1>
-                <h4>Drag the one you like to your Bookmark Bar</h4>
-                <ul>
-                    <li>
-                        <a role="bookmarklet" href="javascript:location.href='mailto:?SUBJECT='+document.title+'&BODY='+escape(location.href);">Send Page</a>
-                        &mdash; Send the page you're viewing as an E-mail
-                    </li>
-                    <li>
-                        <a role="bookmarklet" href="javascript:document.body.contentEditable=true;document.body.spellcheck=false;document.designMode='on';void(0);">Edit this page</a>
-                        &mdash; Make the page you're viewing editable
-                    </li>
-                    <li>
-                        <a role="bookmarklet" href='javascript:[].forEach.call(document.querySelectorAll("*[type=\"password\"]"),function(e){e.setAttribute("type","text")});void(0);'>Show passwords</a>
-                        &mdash; Show the passwords instead of bullets. Example: <input type="password" value="12345" style="width:100px;" />
-                    </li>
-                    <li>
-                        <a role="bookmarklet" href='javascript:var p=[],c=0,s;[].forEach.call(document.querySelectorAll("*[type=\"password\"]"),function(e,t){p.push(++t+") "+e.value);c=t});s=c+" passwords on page:\n"+p.join("\n");alert(s);console.log(s);void(0);'>List passwords</a>
-                        &mdash; Create a list from all passwords on page:
-                        <input type="password" value="a" style="width:20px;" /><input type="password" value="b" style="width:20px;" /><input type="password" value="c" style="width:20px;" /><input type="password" value="d" style="width:20px;" /><input type="password" value="e" style="width:20px;" /><input type="password" value="f" style="width:20px;" /><input type="password" value="g" style="width:20px;" /><input type="password" value="h" style="width:20px;" />
-                    </li>
-                    <li>
-                        <a role="bookmarklet" href='javascript:var d=document,e=d.createElement("style"),i=" !important",v="*{color:#afa"+i+";background-color:#333"+i+";border-color:#afa"+i+";font-family:monospace"+i+";font-size:12px"+i+";}";try{e.styleSheet.cssText=v;}catch(r){e.appendChild(d.createTextNode(v));}d.head.appendChild(e);void(0);'>Terminal View</a>
-                        &mdash; Turn all texts on page bright, and all backgrounds dark
-                    </li>
-                    <li>
-                        <a role="bookmarklet" href='javascript:window.onbeforeunload=function(){return"wat!"};void(0);'>Ask before unload</a>
-                        &mdash; Against annoying auto-reloading websites (really, are we in the 90's?)
-                    </li>
-                    <li>
-                        <a role="bookmarklet" href='javascript:var f,g,a=document.getElementsByTagName("link");[].forEach.call(a,function(e){if(e.rel.toLowerCase().match(/stylesheet/)&&e.href){g=e.href.replace(/(&|%5C?)now=\d+/,"");e.href=g+(g.match(/\?/)?"&":"?")+"now="+(new Date()).getTime()}});void(0);'>Refresh stylesheets</a>
-                        &mdash; Refresh stylesheets loaded as a link rel
-                    </li>
-                    <li>
-                        <a role="bookmarklet" href='javascript: window.open("data:text/html, <html contenteditable style=\"background:#333; color:#ddd; font:normal 14px/18px monospace;\">")'>Scratch-pad</a>
-                        &mdash; Open a quick editable empty document
-                    </li>
-                </ul>
-            </article>
         </main>
-        <script src="googlethat.js"></script>
         <script src="scripts.js"></script>
         <script src="sourcefiles.js"></script>
         <a class="source" href="https://github.com/omrilotan/omrilotan.github.io"></a>
