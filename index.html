@@ -24,7 +24,7 @@ body {
     line-height: 1.4;
 }
 main  { padding: 2em; }
-h1, h2, h3, h4, p, li { margin: .5em 0; }
+h1, h2, h3, h4, p { margin: 0 0 1em; }
 h1 { font-size: 4em; }
 h1 figure {
     width: 1.25em;
@@ -32,23 +32,21 @@ h1 figure {
     display: inline-block;
     vertical-align: text-top;
 }
-li {
-    list-style-position: inside;
-}
 a {
     color: #2980b9;
     border: 1px solid #2980b9;
     text-decoration: none;
     display: inline-block;
     padding: .2em .5em;
+    margin: .1em 0;
 }
 a[href*="npmjs"] {
     color: #c12127;
-    border: 1px solid #c12127;
+    border-color: #c12127;
 }
 a.cli {
     color: #454545;
-    border: 1px solid #454545;
+    border-color: #454545;
 }
 .mobile-only { display: none; }
 
@@ -84,27 +82,14 @@ a.cli {
                           </g>
                         </svg>
                     </figure>
-                    Hi, <br class="mobile-only"/>My name is Omri.
+                    Hi.<br>My name is Omri.
                 </h1>
-                <h2>I Write Code, Articles, Programs, and Javascript Packages.</h2>
+                <h2>I write code. I write articles. I write programs. I write Javascript packages.</h2>
                 <p>
-                    I write about coding on <a href="https://medium.com/@omrilotan">Medium</a>. Lots of my projects are hosted on <a href="https://github.com/omrilotan">Github</a> and are available as open-source.
-                </p>
-                <h3>For example:</h3>
-                <p>
-                    <a class="cli" href="https://www.npmjs.com/package/a1vy">A1vy</a> is a CLI tool I'm constantly developing because I'm constantly using. It helps development by doing mundane tasks for you.
+                    I write about coding on <a href="https://medium.com/@omrilotan">Medium</a>. Most of my projects are hosted on <a href="https://github.com/omrilotan">Github</a> and are available as open-source.
                 </p>
                 <p>
-                    I created <a class="cli" href="https://www.npmjs.com/package/published">Published</a> especially for CI-CD workflows, and it's compatible with NPX. It's a smart NPM published tool which decides if and how to publish your package to NPM.
-                </p>
-                <p>
-                    For my CLI tools, I've created <a href="https://www.npmjs.com/package/upgradable">Upgradable</a>. It prompts your users to upgrade your node CLI tool with one click.
-                </p>
-                <p>
-                    Similarly, <a href="https://www.npmjs.com/package/boxt">Boxt</a> simply creates boxes around text, which is lovely for printing out messages to CLI tools users.
-                </p>
-                <p>
-                    I've developed <a href="https://www.npmjs.com/package/paraphrase">Paraphrase</a> -a string template interpolation engine. It's a simple yet powerful little package.
+                    For example; <a class="cli" href="https://www.npmjs.com/package/a1vy">A1vy</a> is a CLI tool I'm constantly developing because I'm constantly using. It helps development by doing mundane tasks for me, and it'll love to do the same for you. I created <a class="cli" href="https://www.npmjs.com/package/published">Published</a> to be compatible with NPX runner especially for CI-CD workflows. It's a smart NPM published tool which decides if and how to publish packages to NPM. For my CLI tools, I've created <a href="https://www.npmjs.com/package/upgradable">Upgradable</a>. It prompts the user to upgrade their node CLI tool with one click. <a href="https://www.npmjs.com/package/boxt">Boxt</a> simply creates boxes around text, which is lovely for printing out messages to the terminal. I've developed <a href="https://www.npmjs.com/package/paraphrase">Paraphrase</a> -a string template interpolation engine. It's a simple yet powerful little package.
                 </p>
             </article>
         </main>
