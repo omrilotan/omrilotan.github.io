@@ -15,7 +15,7 @@ body {
     font: 100 100%/1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif;
     padding: 2em;
 }
-h1, h2, h3, p { margin: 0 0 1em; }
+h2, p { margin: 0 0 1em; }
 h1 { font-size: 4em; margin: 0 0 .5em; }
 h1 figure {
     width: 1.25em;
@@ -28,6 +28,8 @@ h2 {
     font-size: 1.2em;
 }
 a { color: #2980b9; }
+a:visited { color: #8e44ad; }
+a:active { color: #27ae60; }
         </style>
     </head>
     <body>
@@ -63,8 +65,7 @@ a { color: #2980b9; }
                 The things I make include: <a href="https://www.npmjs.com/package/a1vy">A1vy</a> is a CLI tool I'm constantly developing because I'm constantly using — It helps development by doing mundane tasks for me, and it'll love to do the same for you; I created <a href="https://www.npmjs.com/package/published">Published</a> to be compatible with NPX runner especially for CI-CD workflows — It's a smart NPM published tool which decides if and how to publish packages to NPM; For my CLI tools, I've created <a href="https://www.npmjs.com/package/upgradable">Upgradable</a> — It prompts the user to upgrade their node CLI tool with one click; <a href="https://www.npmjs.com/package/boxt">Boxt</a> simply creates boxes around text, which is lovely for printing out messages to the terminal; I've developed <a href="https://www.npmjs.com/package/paraphrase">Paraphrase</a> — a string template interpolation engine. It's a simple yet powerful little package. See more of my project, and project I maintain, on <a href="https://github.com/omrilotan">my Github page</a>.
             </p>
         </article>
-        <article id="contributions_wrapper">
-        </article>
+        <article id="contributions_wrapper"></article>
         <script>
             fetch('https://libraries.io/api/github/omrilotan/repository-contributions?api_key=e3e30f65e1dc2e9ecd532c3993e7560e')
                 .then(response => response.json())
