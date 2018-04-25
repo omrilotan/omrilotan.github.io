@@ -42,7 +42,7 @@ a:active { color: #27ae60; }
                 Hi.<br>My name is Omri.
             </h1>
             <h2>
-                I write articles about coding on <a href="https://medium.com/@omrilotan">Medium</a>. Most of my projects are hosted on <a href="https://github.com/omrilotan">Github</a> and are available as open-source. I release packages and CLI tools on the <a href="https://www.npmjs.com/~omrilotan">NPM</a> registry.
+                Most of my projects and projects I contribute to are hosted on <a href="https://github.com/omrilotan">Github</a> and are available as open-source. I write articles about coding on <a href="https://medium.com/@omrilotan">Medium</a>.
             </h2>
             <p>
                 <a href="https://ci-cd.net/">ci-cd.net</a> is a hosted collection of generic helper shell scripts, which aim to streamline continues integration and delivery processes across services. This project's goal is to include non business logic scripts which can be used out-of-the-box or adapted by arguments. &para; I wrap projects' readme files with <a href="https://omrilotan.github.io/markt/">markt</a>, and run it using npx. &para; <a href="https://a1vy.net">A1vy</a> is a CLI tool I'm constantly developing because I'm constantly using — It helps development by doing mundane tasks for me, and it'll love to do the same for you. &para; I created <a href="https://www.npmjs.com/package/published">Published</a> to be compatible with NPX runner especially for CI-CD workflows — It's a smart NPM publish tool which decides if and how to publish packages to NPM. &para; For my CLI tools, I've created <a href="https://www.npmjs.com/package/upgradable">Upgradable</a> — It prompts the user to upgrade their node CLI tool with one click. &para; <a href="https://www.npmjs.com/package/boxt">Boxt</a> simply creates boxes around text, which is lovely for printing out messages to the terminal. &para; I've developed <a href="https://www.npmjs.com/package/paraphrase">Paraphrase</a> — a string template interpolation engine. It's a simple yet powerful little package. See more of my project, and project I maintain, on <a href="https://github.com/omrilotan">my Github page</a>.
@@ -50,18 +50,79 @@ a:active { color: #27ae60; }
         </article>
         <article id="contributions_wrapper"></article>
         <script>
-            fetch('https://libraries.io/api/github/omrilotan/repository-contributions?api_key=e3e30f65e1dc2e9ecd532c3993e7560e')
-                .then(response => response.json())
-                .then(addContributions)
-                .catch(error => null);
+            const MY_ORGS = [
+                'omrilotan',
+                'thisisafuckingorganization',
+                'fiverr',
+                'virtualbob',
+                'patuach',
+            ];
+            const pattern = new RegExp(`^${MY_ORGS.map(org => `(${org})`).join('|')}`);
+            const prefix = 'I\'ve recently contributed to: ';
 
-            function addContributions(contributions) {
-                const list = contributions.reduce(
-                    (list, {full_name}) => full_name.match(/^(omrilotan)|(thisisafuckingorganization)/) ? list : [...list, `<a href="https://github.com/${full_name}/graphs/contributors">${full_name}</a>`],
-                    []);
+            Promise.all(
+                [1, 2, 3].map(i =>
+                    fetch(`https://api.github.com/users/omrilotan/events/public?page=${i}&per_page=100`).then(response => response.json())
+                )
+            )
+            .then(lists => [].concat(...lists))
+            .then(contributions => Promise.all(
+                    contributions.reduce(
+                        (list, {type, repo, payload}) => {
+                            if (type !== 'PullRequestEvent') {
+                                return list;
+                            }
+                            const {name} = repo;
 
-                contributions_wrapper.innerHTML = `I've recently contributed to: ${list.join(', ')}`;
-            }
+                            if (MY_ORGS.includes(name.replace(/\/.*/, ''))) {
+                                return list;
+                            }
+
+                            if (name.match(/^(omrilotan)|(thisisafuckingorganization)/)) {
+                                return list;
+                            }
+
+                            const {pull_request} = payload;
+                            const {state, url, html_url, title} = pull_request;
+
+                            if (pull_request.state !== 'closed') {
+                                return list;
+                            }
+
+                            return [
+                                ...list,
+                                fetch(url)
+                                    .then(response => response.json())
+                                    .then(({merged}) => merged ? `<a href="${html_url}" title="${title}">${name}</a>` : '')
+                                    .catch(error => '')
+                                ]
+                        },
+                        []
+                    )
+                )
+            )
+            .then(list => {
+                list = list.filter(i => !!i);
+                if (!list.length) {
+                    return;
+                }
+                contributions_wrapper.innerHTML = `${prefix}${list.join(', ')}`
+            })
+            .then(() => fetch('https://libraries.io/api/github/omrilotan/repository-contributions?api_key=e3e30f65e1dc2e9ecd532c3993e7560e'))
+            .then(response => response.json())
+            .then(contributions => contributions.reduce(
+
+
+                (list, {full_name}) => full_name.match(pattern) ? list : [...list, `<a href="https://github.com/${full_name}/graphs/contributors">${full_name}</a>`],
+                []
+            ))
+            .then(list => {
+                contributions_wrapper.innerHTML = [
+                    contributions_wrapper.innerHTML || prefix,
+                    list ? `, ${list.join(', ')}` : '',
+                ].join('');
+            })
+            .catch(error => { throw error; });
         </script>
     </body>
 </html>
