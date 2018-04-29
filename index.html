@@ -85,10 +85,6 @@ a:active { color: #27ae60; }
                             const {pull_request} = payload;
                             const {state, url, html_url, title} = pull_request;
 
-                            if (pull_request.state !== 'closed') {
-                                return list;
-                            }
-
                             return [
                                 ...list,
                                 fetch(url)
@@ -103,6 +99,7 @@ a:active { color: #27ae60; }
             )
             .then(list => {
                 list = list.filter(i => !!i);
+                list = Array.from(new Set(list));
                 if (!list.length) {
                     return;
                 }
