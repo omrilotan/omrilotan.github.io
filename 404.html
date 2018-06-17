@@ -1,15 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
-        <title>404</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Searching...</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
         <meta http-equiv="Cache-Control" content="no-cache"/>
         <meta name="googlebot" content="noindex" />
         <meta name="robots" content="noindex" />
     </head>
     <body>
-        404
+        <script>
+(async() => {
+    const name = window.location.pathname.split('/').filter(i => !!i).shift();
+    const dest = `https://omrilotan.github.io/${name}/`;
+
+    const res = await fetch(dest, {mode: 'cors'});
+    const target = res.status.toString().startsWith('2') ? dest : '/';
+
+    window.location.replace(target);
+})();
+        </script>
     </body>
 </html>
