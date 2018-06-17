@@ -14,11 +14,16 @@
 (async() => {
     const name = window.location.pathname.split('/').filter(i => !!i).shift();
     const dest = `https://omrilotan.github.io/${name}/`;
+    let target = '/';
 
-    const res = await fetch(dest, {mode: 'cors'});
-    const target = res.status.toString().startsWith('2') ? dest : '/';
-
-    window.location.replace(target);
+    try {
+        const res = await fetch(dest, {mode: 'cors'});
+        res.status.toString().startsWith('2') && (target = dest);
+    } catch (error) {
+        // fail silently
+    } finally {
+        window.location.replace(target);
+    }
 })();
         </script>
     </body>
