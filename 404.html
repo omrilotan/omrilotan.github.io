@@ -13,12 +13,12 @@
         <script>
 (async() => {
     const name = window.location.pathname.split('/').filter(i => !!i).shift();
-    const dest = `https://omrilotan.com/${name}/`;
+    const repo = `https://api.github.com/repos/omrilotan/${name}`;
     let target = '/';
 
     try {
-        const res = await fetch(dest, {mode: 'cors'});
-        res.status.toString().startsWith('2') && (target = dest);
+        const res = await fetch(repo, {mode: 'cors'});
+        res.status.toString().startsWith('2') && (target = (await res.json()).html_url);
     } catch (error) {
         // fail silently
     } finally {
