@@ -16,11 +16,32 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: Create page
-          command: npm start
+          name: Set user
+          command: |
+            git config --global user.name a1vy &&
+            git config --global user.email a01101100vy@gmail.com
       - run:
-          name: Post to gh-pages
-          command: curl ci-cd.net/v1/gh/pages | bash -s docs/.
+          name: Clone master branch
+          command: git clone -b master --single-branch $CIRCLE_REPOSITORY_URL docs
+      - run:
+          name: Clean everything
+          command: |
+            cd docs &&
+            ls -a | grep -v .git | egrep -vU "\.$" | xargs rm -rf &&
+            cd -
+      - run:
+          name: Create page
+          command: |
+            cp -r assets/* docs &&
+            node build
+      - run:
+          name: Commit
+          command: |
+            cd docs &&
+            git add . &&
+            git commit -m "$(curl -s whatthecommit.com/index.txt)" &&
+            git push origin master --force-with-lease &&
+            cd -
       - run:
           name: CloufFlare - Purge everything
           command: |
@@ -38,4 +59,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - build
