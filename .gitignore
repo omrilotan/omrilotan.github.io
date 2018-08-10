@@ -1,8 +1,4 @@
-.*
-!.editorconfig
-!.gitattributes
-!.npmrc
-!.circleci
+.DS_Store
 *.log
 node_modules
 docs
