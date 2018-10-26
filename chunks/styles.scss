@@ -22,14 +22,21 @@ body {
   font: 100 100%/1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif;
   padding: 2em;
 }
-@media (max-width: 800px) {
-  body { padding: 1em; }
-}
 h2, p { margin: 0 0 1em; }
 h1 { font-size: 4em; margin: 0 0 .5em; }
-@media (max-width: 800px) {
-  h1 { font-size: 2.5em; }
+h2 {
+  font-weight: 100;
+  font-size: 1.3em;
+  letter-spacing: .02em;
 }
+h2 a {
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+a         { color: var(--link-colour-default); }
+a:visited { color: var(--link-colour-visited); }
+a:active  { color: var(--link-colour-active); }
+
 h1 figure {
   width: 1.25em;
   height: 1.25em;
@@ -45,15 +52,8 @@ h1 figure path {
     border-radius: 50%;
   }
 }
-h2 {
-  font-weight: 100;
-  font-size: 1.3em;
-  letter-spacing: .02em;
+
+@media (max-width: 800px) {
+  body { padding: 1em; }
+  h1 { font-size: 2.5em; }
 }
-h2 a {
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-}
-a         { color: var(--link-colour-default); }
-a:visited { color: var(--link-colour-visited); }
-a:active  { color: var(--link-colour-active); }

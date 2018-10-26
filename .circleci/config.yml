@@ -27,7 +27,7 @@ jobs:
           name: Clean everything
           command: |
             cd docs &&
-            ls -a | grep -v .git | egrep -vU "\.$" | xargs rm -rf &&
+            ls -a | grep -v .git | grep -v .circleci | egrep -vU "\.$" | xargs rm -rf &&
             cd -
       - run:
           name: Create page
