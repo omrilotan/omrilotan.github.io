@@ -1,6 +1,7 @@
 :root {
 	--foreground-colour: #000;
 	--background-colour: #fff;
+	--selection-colour: #d2e9f3;
 	--link-colour-default: #2980b9;
 	--link-colour-visited: #8e44ad;
 	--link-colour-active:  #27ae60;
@@ -9,6 +10,7 @@
 	:root {
 		--foreground-colour: #fff;
 		--background-colour: #000;
+		--selection-colour: #065273;
 		--link-colour-default: #5cbeff;
 		--link-colour-visited: #ce65fb;
 		--link-colour-active:  #47f390;
@@ -21,6 +23,9 @@ body {
   background: var(--background-colour);
   font: 100 100%/1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif;
   padding: 2em;
+}
+::selection {
+  background: var(--selection-colour);
 }
 h2, p { margin: 0 0 1em; }
 h1 { font-size: 4em; margin: 0 0 .5em; }
