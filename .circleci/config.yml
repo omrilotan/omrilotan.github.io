@@ -38,8 +38,14 @@ jobs:
           name: Get mono
           command: git clone git@github.com:omrilotan/mono.git
       - run:
-          name: create sitemap
+          name: Create sitemap
           command: node ./mono/scripts/sitemap.js --base "https://omrilotan.com" > ./docs/sitemap.xml
+      - run:
+          name: Check for changes
+          command: |
+            cd docs &&
+            git diff --exit-code && circleci step halt
+            cd -
       - run:
           name: Commit
           command: |
