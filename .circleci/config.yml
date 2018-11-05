@@ -35,6 +35,12 @@ jobs:
             cp -r assets/* docs &&
             node build
       - run:
+          name: Get mono
+          command: git clone git@github.com:omrilotan/mono.git
+      - run:
+          name: create sitemap
+          command: node ./mono/scripts/sitemap.js --base "https://omrilotan.com" > ./docs/sitemap.xml
+      - run:
           name: Commit
           command: |
             cd docs &&

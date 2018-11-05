@@ -59,18 +59,4 @@ const {processString} = require('uglifycss');
 		'./docs/index.html',
 		phrase(template, data)
 	);
-
-	writeFile(
-		'./docs/sitemap.xml',
-		sitemap()
-	);
 })();
-
-const sitemap = (d = new Date()) => `<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-	<loc>https://omrilotan.com/</loc>
-	<lastmod>${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}T09:00:00+00:00</lastmod>
-  </url>
-</urlset>
-`;
-
