@@ -6,150 +6,150 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://omrilotan.com/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://omrilotan.com/mono/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.80</priority>
 	</url>
 	
 	<url>
 		<loc>https://omrilotan.com/mono/assign/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/async-execute/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/async-git/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/await-reduce/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/bench-press/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/boxt/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/doamrn/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/edit-package/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/hypertonia/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/index-require/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/jsnpm/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/jsoncopy/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/markt/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/notate/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/oh-my-gauge/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/oooooo/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/paraphrase/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/perfrep/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/run-all-the-things/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/selenium-chrome-clear-cache/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/transparent-pixel/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/twinsies/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 
 	<url>
 		<loc>https://omrilotan.com/mono/upgradable/</loc>
-		<lastmod>2018-11-05</lastmod>
+		<lastmod>2018-11-06</lastmod>
 		<priority>0.60</priority>
 	</url>
 </urlset>
