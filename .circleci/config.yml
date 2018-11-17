@@ -30,6 +30,12 @@ jobs:
             ls -a | grep -v .git | grep -v .circleci | egrep -vU "\.$" | xargs rm -rf &&
             cd -
       - run:
+          name: Set NPM tokens
+          command: echo -e $NPMRC > ~/.npmrc
+      - run:
+          name: Publish cli
+          command: npx published --latest-branch build
+      - run:
           name: Create page
           command: |
             cp -r assets/* docs &&
