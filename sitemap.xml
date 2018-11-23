@@ -52,6 +52,12 @@
 	</url>
 
 	<url>
+		<loc>https://omrilotan.com/mono/chunkalyse/</loc>
+		<lastmod>2018-11-23</lastmod>
+		<priority>0.60</priority>
+	</url>
+
+	<url>
 		<loc>https://omrilotan.com/mono/create-git-alias/</loc>
 		<lastmod>2018-11-23</lastmod>
 		<priority>0.60</priority>
