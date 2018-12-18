@@ -76,6 +76,12 @@
 	</url>
 
 	<url>
+		<loc>https://omrilotan.com/mono/exist/</loc>
+		<lastmod>2018-12-18</lastmod>
+		<priority>0.60</priority>
+	</url>
+
+	<url>
 		<loc>https://omrilotan.com/mono/flatten/</loc>
 		<lastmod>2018-12-18</lastmod>
 		<priority>0.60</priority>
