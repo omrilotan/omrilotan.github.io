@@ -58,6 +58,12 @@
 	</url>
 
 	<url>
+		<loc>https://omrilotan.com/mono/committee/</loc>
+		<lastmod>2018-12-18</lastmod>
+		<priority>0.60</priority>
+	</url>
+
+	<url>
 		<loc>https://omrilotan.com/mono/create-git-alias/</loc>
 		<lastmod>2018-12-18</lastmod>
 		<priority>0.60</priority>
