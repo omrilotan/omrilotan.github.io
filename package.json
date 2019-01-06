@@ -9,6 +9,10 @@
     "type": "git",
     "url": "git+https://github.com/omrilotan/omrilotan.github.io.git"
   },
+  "scripts": {
+    "start": "node build",
+    "test": "NODE_ENV=test node build"
+  },
   "bin": "omrilotan.js",
   "devDependencies": {
     "await-reduce": "^1.1.1",

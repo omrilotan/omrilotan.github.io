@@ -15,6 +15,13 @@ const tocss = async(data) => (
 ).css.toString();
 const {processString} = require('uglifycss');
 
+const {NODE_ENV = 'production'} = process.env;
+const test = NODE_ENV.toLowerCase().startsWith('test');
+const processors = {
+	js: test ? [transform] : [transform, minify],
+	css: test ? [tocss] : [tocss, processString],
+};
+
 (async() => {
 	const template = await read('./template.html');
 
@@ -30,19 +37,13 @@ const {processString} = require('uglifycss');
 						case 'md':
 							return await marked(content, {});
 						case 'js':
-							return [
-								transform,
-								minify,
-							].reduce(
+							return processors.js.reduce(
 								(input, fn) => fn(input).code,
 								content
 							);
 						case 'scss':
 							return await reduce(
-								[
-									tocss,
-									processString,
-								],
+								processors.css,
 								async(input, fn) => await fn(input),
 								content
 							);
