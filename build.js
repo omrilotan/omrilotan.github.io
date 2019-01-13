@@ -1,6 +1,7 @@
 process.on('unhandledRejection', error => console.error(error));
 
 const {readdir, readFile, writeFile} = require('fs').promises;
+const {resolve} = require('path');
 const read = async file => (await readFile(file)).toString();
 const phrase = require('paraphrase/double');
 const reduce = require('await-reduce');
@@ -21,6 +22,8 @@ const processors = {
 	js: test ? [transform] : [transform, minify],
 	css: test ? [tocss] : [tocss, processString],
 };
+
+const DESTINATION = resolve('./docs/index.html');
 
 (async() => {
 	const template = await read('./template.html');
@@ -56,8 +59,10 @@ const processors = {
 		{}
 	);
 
-	writeFile(
-		'./docs/index.html',
+	await writeFile(
+		DESTINATION,
 		phrase(template, data)
 	);
+
+	console.info('Created at', DESTINATION);
 })();
