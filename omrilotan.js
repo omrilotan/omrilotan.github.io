@@ -9,7 +9,11 @@ const termImg = require('term-img');
 const terminalLink = require('terminal-link');
 
 process.stdout.write('\033c');
-termImg(join(__dirname, 'cli', 'omri.png'));
+try {
+	termImg(join(__dirname, 'cli', 'omri.png'));
+} catch (error) {
+	// ignore
+}
 
 console.log(
 	[

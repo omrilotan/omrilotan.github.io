@@ -25,7 +25,27 @@ const processors = {
 
 const DESTINATION = resolve('./docs/index.html');
 
-(async() => {
+build();
+
+const {createMonitor} = require('watch');
+
+test && createMonitor(
+	'.',
+	{
+		ignoreDotFiles: true,
+		ignoreUnreadableDir: true,
+		ignoreNotPermitted: true,
+		ignoreDirectoryPattern: /^\.|^docs/,
+	},
+	monitor => {
+    monitor.on('created', build)
+	    .on('changed', build)
+	    .on('removed', build);
+	}
+);
+
+
+async function build() {
 	const template = await read('./template.html');
 
 	const data = await reduce(
@@ -65,4 +85,4 @@ const DESTINATION = resolve('./docs/index.html');
 	);
 
 	console.info('Created at', DESTINATION);
-})();
+};
