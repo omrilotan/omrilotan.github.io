@@ -226,6 +226,12 @@
 	</url>
 
 	<url>
+		<loc>https://omrilotan.com/mono/run/</loc>
+		<lastmod>2019-03-27</lastmod>
+		<priority>0.60</priority>
+	</url>
+
+	<url>
 		<loc>https://omrilotan.com/mono/run-all-the-things/</loc>
 		<lastmod>2019-03-27</lastmod>
 		<priority>0.60</priority>
