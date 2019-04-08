@@ -8,7 +8,7 @@ process.on('unhandledRejection', console.error);
 const img = require('term-img');
 const link = require('terminal-link');
 
-process.stdout.write('\033c');
+process.stdout.write('\x1Bc'); // \033c
 try {
 	img(join(__dirname, 'cli', 'omri.png'));
 } catch (error) {

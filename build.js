@@ -1,4 +1,6 @@
-process.on('unhandledRejection', error => console.error(error));
+const {error, info} = console;
+
+process.on('unhandledRejection', err => error(err));
 
 const {readdir, readFile, writeFile} = require('fs').promises;
 const {resolve} = require('path');
@@ -9,7 +11,7 @@ const marked = require('marked');
 const {minify} = require('uglify-js');
 const {transform} = require('babel-core');
 const {promisify} = require('util');
-const tocss = async(data) => (
+const tocss = async data => (
 	await promisify(
 		require('node-sass').render
 	)({data})
@@ -38,9 +40,9 @@ test && createMonitor(
 		ignoreDirectoryPattern: /^\.|^docs/,
 	},
 	monitor => {
-    monitor.on('created', build)
-	    .on('changed', build)
-	    .on('removed', build);
+		monitor.on('created', build)
+			.on('changed', build)
+			.on('removed', build);
 	}
 );
 
@@ -73,7 +75,7 @@ async function build() {
 						default:
 							return content;
 					}
-				})()).trim()
+				})()).trim(),
 			}
 		),
 		{}
@@ -84,5 +86,5 @@ async function build() {
 		phrase(template, data)
 	);
 
-	console.info('Created at', DESTINATION);
-};
+	info('Created at', DESTINATION);
+}

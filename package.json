@@ -11,12 +11,14 @@
   },
   "scripts": {
     "start": "node build",
-    "test": "NODE_ENV=test node build"
+    "test": "NODE_ENV=test node build",
+    "lint": "eslint **/*.js"
   },
-  "bin": "omrilotan.js",
+  "bin": "bin.js",
   "devDependencies": {
     "await-reduce": "^1.2.3",
     "babel-core": "^6.26.3",
+    "eslint": "^5.16.0",
     "marked": "^0.6.0",
     "node-sass": "^4.11.0",
     "paraphrase": "^1.7.0",

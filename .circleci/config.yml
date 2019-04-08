@@ -16,6 +16,9 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: Verify syntax
+          command: npm run lint
+      - run:
           name: Set user
           command: |
             git config --global user.name a1vy &&
