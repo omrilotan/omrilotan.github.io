@@ -1,6 +1,6 @@
 {
   "name": "omrilotan",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "I woke up like this",
   "homepage": "https://omrilotan.com",
   "author": "omri",
@@ -20,16 +20,16 @@
     "await-reduce": "^1.2.3",
     "babel-core": "^6.26.3",
     "eslint": "^5.16.0",
-    "marked": "^0.6.0",
+    "marked": "^0.6.2",
     "node-sass": "^4.11.0",
     "paraphrase": "^1.7.0",
-    "uglify-js": "^3.4.6",
+    "uglify-js": "^3.5.8",
     "uglifycss": "0.0.29"
   },
   "dependencies": {
     "colors": "^1.3.3",
-    "term-img": "^4.0.0",
-    "terminal-link": "^1.2.0",
+    "term-img": "^4.1.0",
+    "terminal-link": "^1.3.0",
     "watch": "^1.0.2"
   }
 }
