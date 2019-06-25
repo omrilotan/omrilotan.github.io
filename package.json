@@ -19,7 +19,7 @@
     "@omrilotan/eslint-config": "0.0.0",
     "await-reduce": "^1.2.3",
     "babel-core": "^6.26.3",
-    "eslint": "^5.16.0",
+    "eslint": "^6.0.1",
     "marked": "^0.6.2",
     "node-sass": "^4.11.0",
     "paraphrase": "^1.7.0",
