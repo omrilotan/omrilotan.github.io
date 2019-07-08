@@ -20,7 +20,7 @@
     "await-reduce": "^1.2.3",
     "babel-core": "^6.26.3",
     "eslint": "^5.16.0",
-    "marked": "^0.6.2",
+    "marked": "^0.7.0",
     "node-sass": "^4.11.0",
     "paraphrase": "^1.7.0",
     "uglify-js": "^3.5.8",
