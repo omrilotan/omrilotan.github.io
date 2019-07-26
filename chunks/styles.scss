@@ -38,6 +38,7 @@ h2 a {
 	text-decoration: none;
 	border-bottom: 1px solid currentColor;
 }
+h3 { font-size: 3em; }
 a         { color: var(--link-colour-default); }
 a:visited { color: var(--link-colour-visited); }
 a:active  { color: var(--link-colour-active); }
@@ -51,6 +52,11 @@ h1 figure {
 h1 figure path {
 	fill: #333;
 }
+article {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
 @media (prefers-color-scheme: dark) {
 	figure {
 		background: #fff;
@@ -61,4 +67,5 @@ h1 figure path {
 @media (max-width: 800px) {
 	body { padding: 1em; }
 	h1 { font-size: 2.5em; }
+	h3 { font-size: 2em; }
 }
