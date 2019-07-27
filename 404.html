@@ -13,11 +13,11 @@
 html,body{height:100%}
 body{font:100 100%/1.4 -apple-system,"BlinkMacSystemFont","Helvetica Neue","Helvetica","Lucida Grande","Arial",sans-serif;display:flex;justify-content:center;align-items:center}
 @keyframes ddd{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
-body:after{content:'';display:inline-block;width:2em;animation:ddd 1.5s infinite;
+.state:after{content:'';display:inline-block;width:2em;animation:ddd 1.5s infinite;
 		</style>
 	</head>
 	<body>
-		Searching
+		<span id="state" class="state">Searching</span>
 		<script>
 (async() => {
 	const name = window.location.pathname.split('/').filter(i => !!i).shift();
@@ -26,9 +26,12 @@ body:after{content:'';display:inline-block;width:2em;animation:ddd 1.5s infinite
 
 	try {
 		const res = await fetch(repo, {mode: 'cors'});
-		res.status.toString().startsWith('2') && (target = (await res.json()).html_url);
+		if (res.status.toString().startsWith('2')) {
+			target = (await res.json()).html_url;
+			state.innerText = 'Redirecting';
+		}
 	} catch (error) {
-		// fail silently
+		state.innerText = 'Did not find a project by that name';
 	} finally {
 		window.location.replace(target);
 	}
