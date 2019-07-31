@@ -16,7 +16,7 @@
   },
   "bin": "bin.js",
   "devDependencies": {
-    "@omrilotan/eslint-config": "0.0.0",
+    "@omrilotan/eslint-config": "1.0.0",
     "await-reduce": "^1.2.3",
     "babel-core": "^6.26.3",
     "eslint": "^5.16.0",
