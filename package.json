@@ -16,14 +16,14 @@
   },
   "bin": "bin.js",
   "devDependencies": {
-    "@omrilotan/eslint-config": "0.0.0",
+    "@omrilotan/eslint-config": "^1.0.0",
     "await-reduce": "^1.2.3",
     "babel-core": "^6.26.3",
-    "eslint": "^5.16.0",
-    "marked": "^0.6.2",
-    "node-sass": "^4.11.0",
+    "eslint": "^6.2.1",
+    "marked": "^0.7.0",
+    "node-sass": "^4.12.0",
     "paraphrase": "^1.7.0",
-    "uglify-js": "^3.5.8",
+    "uglify-js": "^3.6.0",
     "uglifycss": "0.0.29"
   },
   "dependencies": {

@@ -4,13 +4,15 @@ process.on('unhandledRejection', err => error(err));
 
 const {readdir, readFile, writeFile} = require('fs').promises;
 const {resolve} = require('path');
+
 const read = async file => (await readFile(file)).toString();
+const {promisify} = require('util');
 const phrase = require('paraphrase/double');
 const reduce = require('await-reduce');
 const marked = require('marked');
 const {minify} = require('uglify-js');
 const {transform} = require('babel-core');
-const {promisify} = require('util');
+
 const tocss = async data => (
 	await promisify(
 		require('node-sass').render
