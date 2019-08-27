@@ -7,6 +7,8 @@
 
 	const CACHED_FILES = [
 		'index.html',
+		'omri-192.png',
+		'omri-512.png',
 	];
 
 	self.addEventListener(
