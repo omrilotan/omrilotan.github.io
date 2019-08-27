@@ -1,10 +1,7 @@
 (() => {
 	const cacheKey = new URL(location).searchParams.get('ck');
 
-	console.log({cacheKey});
-	if (!cacheKey) {
-		return;
-	}
+	if (!cacheKey) { return; }
 
 	const CACHED_FILES = [
 		'index.html',
