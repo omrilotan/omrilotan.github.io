@@ -18,18 +18,18 @@
 		)
 	);
 
-	// self.addEventListener(
-	// 	'activate',
-	// 	event => event.waitUntil(
-	// 		caches.keys().then(
-	// 			keys => keys.filter(
-	// 				key => key !== cacheKey
-	// 			).forEach(
-	// 				key => caches.delete(key)
-	// 			)
-	// 		)
-	// 	)
-	// );
+	self.addEventListener(
+		'activate',
+		event => event.waitUntil(
+			caches.keys().then(
+				keys => keys.filter(
+					key => key !== cacheKey
+				).forEach(
+					key => caches.delete(key)
+				)
+			)
+		)
+	);
 
 	self.addEventListener(
 		'fetch',
