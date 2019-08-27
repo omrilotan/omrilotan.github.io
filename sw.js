@@ -14,8 +14,6 @@
 		event => event.waitUntil(
 			caches.open(cacheKey).then(
 				cache => cache.addAll(CACHED_FILES)
-			).then(
-				() => self.skipWaiting()
 			)
 		)
 	);
