@@ -7,7 +7,6 @@
 		'index.html',
 	];
 
-
 	self.addEventListener(
 		'install',
 		event => event.waitUntil(
@@ -18,21 +17,6 @@
 			)
 		)
 	);
-
-	// self.addEventListener(
-	// 	'activate',
-	// 	event => event.waitUntil(
-	// 		Promise.all(
-	// 			caches.keys().then(
-	// 				cacheNames => cacheNames.map(
-	// 					name => name !== cacheKey ? caches.delete(name) : undefined
-	// 				)
-	// 			)
-	// 		).then(
-	// 			() => self.clients.claim()
-	// 		)
-	// 	)
-	// );
 
 	self.addEventListener(
 		'fetch',
