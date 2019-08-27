@@ -12,8 +12,6 @@
 		event => event.waitUntil(
 			caches.open(cacheKey).then(
 				cache => cache.addAll(CACHED_FILES)
-			).then(
-				() => self.skipWaiting()
 			)
 		)
 	);
@@ -22,11 +20,11 @@
 		'activate',
 		event => event.waitUntil(
 			caches.keys().then(
-				keys => keys.forEach(
-					key => key === cacheKey || caches.delete(key)
+				keys => keys.filter(
+					key => key !== cacheKey
+				).forEach(
+					key => caches.delete(key)
 				)
-			).then(
-				() => self.clients.claim()
 			)
 		)
 	);
