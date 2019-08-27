@@ -25,7 +25,7 @@
 			Promise.all(
 				caches.keys().then(
 					cacheNames => cacheNames.map(
-						name => name !== cacheKey && caches.delete(name)
+						name => name !== cacheKey ? caches.delete(name) : undefined
 					)
 				)
 			).then(
