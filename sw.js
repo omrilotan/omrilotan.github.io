@@ -1,7 +1,7 @@
 (() => {
 	const cacheKey = new URL(location).searchParams.get('ck');
 	if (!cacheKey) {
-		console.error('Could not get cache key');
+		console.log({cacheKey});
 		return;
 	}
 
