@@ -21,17 +21,20 @@
 
 	self.addEventListener(
 		'activate',
-		event => event.waitUntil(
-			Promise.all(
-				caches.keys().then(
-					cacheNames => cacheNames.map(
-						name => name !== cacheKey ? caches.delete(name) : undefined
-					)
-				)
-			).then(
-				() => self.clients.claim()
-			)
-		)
+		event => event.waitUntil(async () => {
+			const keys = await caches.keys();
+			console.log({keys});
+		})
+		// 	Promise.all(
+		// 		caches.keys().then(
+		// 			cacheNames => cacheNames.map(
+		// 				name => name !== cacheKey ? caches.delete(name) : undefined
+		// 			)
+		// 		)
+		// 	).then(
+		// 		() => self.clients.claim()
+		// 	)
+		// )
 	);
 
 	self.addEventListener(
