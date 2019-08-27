@@ -2,7 +2,9 @@
 	const cacheKey = new URL(location).searchParams.get('ck');
 
 	console.log({cacheKey});
-	if (!cacheKey) { return; }
+	if (!cacheKey) {
+		return;
+	}
 
 	const CACHED_FILES = [
 		'index.html',
@@ -14,6 +16,8 @@
 		event => event.waitUntil(
 			caches.open(cacheKey).then(
 				cache => cache.addAll(CACHED_FILES)
+			).then(
+				() => self.skipWaiting()
 			)
 		)
 	);
@@ -41,4 +45,4 @@
 			)
 		)
 	);
-});
+})();
