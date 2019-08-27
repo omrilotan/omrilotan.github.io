@@ -1,13 +1,11 @@
-const meta = (name, tag = document.querySelector(`meta[name="${name}"]`)) => tag && tag.getAttribute('content');
-const CACHED_FILES = [
-	'index.html',
-];
-
 (() => {
-	const cacheKey = meta('sw-cache-key');
-	if (!cacheKey) {
-		return;
-	}
+	const cacheKey = new URL(location).searchParams.get('ck');
+	if (!cacheKey) { return; }
+
+	const CACHED_FILES = [
+		'index.html',
+	];
+
 
 	self.addEventListener(
 		'install',
