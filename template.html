@@ -24,7 +24,7 @@
 		<link href="{{ favicon }}" rel="shortcut icon" type="image/x-icon">
 		<link rel="canonical" href="https://omrilotan.com/">
 		<link rel="alternate" href="https://omrilotan.com/" hreflang="en-GB">
-		<link rel="manifest" href="/manifest.json">
+		<link rel="manifest" href="/manifest.webmanifest">
 		<link rel="dns-prefetch" href="https://github.com/">
 		<link rel="dns-prefetch" href="https://medium.com/">
 		<link rel="dns-prefetch" href="https://ci-cd.net/">
@@ -44,5 +44,6 @@
 			</h1>
 			{{ content }}
 		</article>
+		<script>navigator.onLine && location.protocol.startsWith('https') && 'serviceWorker' in navigator && navigator.serviceWorker.register('sw.js?ck=v1')</script>
 	</body>
 </html>
