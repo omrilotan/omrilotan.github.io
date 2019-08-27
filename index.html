@@ -32,6 +32,7 @@
 		<link rel="search" type="application/opensearchdescription+xml" title="Search omrilotan" href="/opensearch.xml">
 		<link rel="author" href="https://github.com/omrilotan/omrilotan.github.io">
 		<link rel="license" href="https://raw.githubusercontent.com/omrilotan/omrilotan.github.io/build/LICENSE">
+		<meta name="sw-cache-key" content="1">
 		<style>:root{--foreground-colour:#000;--background-colour:#fff;--selection-colour:#d2e9f3;--link-colour-default:#2980b9;--link-colour-visited:#8e44ad;--link-colour-active:#27ae60}@media(prefers-color-scheme:dark){:root{--foreground-colour:#fff;--background-colour:#000;--selection-colour:#065273;--link-colour-default:#5cbeff;--link-colour-visited:#ce65fb;--link-colour-active:#47f390}}*{margin:0;padding:0}body{color:var(--foreground-colour);background:var(--background-colour);font:100 100%/1.4 -apple-system,"BlinkMacSystemFont","Helvetica Neue","Helvetica","Lucida Grande","Arial",sans-serif;padding:2em}::selection{background:var(--selection-colour)}h2,p{margin:0 0 1em}h1{font-size:4em;margin:0 0 .5em}h2{font-weight:100;font-size:1.3em;letter-spacing:.02em}h2 a{text-decoration:none;border-bottom:1px solid currentColor}h3{font-size:3em}a{color:var(--link-colour-default)}a:visited{color:var(--link-colour-visited)}a:active{color:var(--link-colour-active)}h1 figure{width:1.25em;height:1.25em;display:inline-block;vertical-align:text-top}h1 figure path{fill:#333}article{max-width:1024px;margin:0 auto}@media(prefers-color-scheme:dark){figure{background:#fff;border-radius:50%}}@media(max-width:800px){body{padding:1em}h1{font-size:2.5em}h3{font-size:2em}}</style>
 	</head>
 	<body>
@@ -47,6 +48,6 @@
 <p>Short articles I&#39;ve written include ✏️ An illustrated <a href="https://medium.com/fiverr-engineering/major-minor-patch-a5298e2e1798">guide to SemVer (Semantic Versioning)</a> 🤺. A walk-through for using <a href="https://medium.com/fiverr-engineering/working-with-git-submodules-ec6210801e07">git submodules</a> as a tool for code re-use 🐙. An example of how to <a href="https://medium.com/fiverr-engineering/robots-writing-docs-3b9877e42c31">automate documentation websites</a> creation 🤖. And <a href="https://medium.com/@omrilotan/latest">more</a> 𝐌.</p>
 <p>I&#39;m also maintaining a couple of mostly useless web pages: <a href="https://omrilotan.com/pwd/">PWD</a> is a consistent password generator 🔑. <a href="https://omrilotan.com/black/">Black</a> is just a black page with full-screen toggle we use on our TV at home to black out the screen 🖥. A simple page that tells the <a href="https://omrilotan.com/time/">time</a> 🕰. See current stage of the <a href="https://omrilotan.com/moon/">moon</a> 🌕.</p>
 		</article>
-		<script>location.protocol.startsWith('https') && 'serviceWorker' in navigator && navigator.serviceWorker.register('sw.js')</script>
+		<script>navigator.onLine && location.protocol.startsWith('https') && 'serviceWorker' in navigator && navigator.serviceWorker.register('sw.js')</script>
 	</body>
 </html>
