@@ -274,6 +274,12 @@
 	</url>
 
 	<url>
+		<loc>https://omrilotan.com/mono/publish/</loc>
+		<lastmod>2019-10-31</lastmod>
+		<priority>0.60</priority>
+	</url>
+
+	<url>
 		<loc>https://omrilotan.com/mono/reverse-dns-lookup/</loc>
 		<lastmod>2019-10-31</lastmod>
 		<priority>0.60</priority>
