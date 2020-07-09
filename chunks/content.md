@@ -1,4 +1,4 @@
-## These days I specialise in front end observability. Most of my projects and projects I contribute to are hosted on [Github](https://github.com/omrilotan) and are available as open-source. I write articles about coding on ~[Medium](https://medium.com/@omrilotan)~ [DEV Community](https://dev.to/omrilotan).
+## These days I specialise in front end observability. Most of my projects and projects I contribute to are hosted on [Github](https://github.com/omrilotan) and are available as open-source. Sometimes, I write articles about coding on [Medium](https://medium.com/@omrilotan).
 
 At the moment I'm working on [doowat](https://doowat.net). It's a web app for "on the go" activities to do with your child that require no preparations. If you have small kids - I encourage you to check it out. It's open source and has no profit angle - just fun.
 
