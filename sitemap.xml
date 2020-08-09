@@ -136,12 +136,6 @@
 	</url>
 
 	<url>
-		<loc>https://omrilotan.com/mono/eslint-plugin-log/</loc>
-		<lastmod>2020-08-09</lastmod>
-		<priority>0.60</priority>
-	</url>
-
-	<url>
 		<loc>https://omrilotan.com/mono/eslintrc/</loc>
 		<lastmod>2020-08-09</lastmod>
 		<priority>0.60</priority>
