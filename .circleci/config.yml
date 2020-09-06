@@ -40,9 +40,7 @@ jobs:
           command: npx published --latest-branch build
       - run:
           name: Create page
-          command: |
-            cp -r assets/* docs &&
-            npm start
+          command: npm run build
       - run:
           name: Get mono
           command: git clone git@github.com:omrilotan/mono.git

@@ -1,20 +1,11 @@
 #!/usr/bin/env node
 
-const {join} = require('path');
 require('colors');
+const link = require('terminal-link');
 
 process.on('unhandledRejection', console.error);
 
-const img = require('term-img');
-const link = require('terminal-link');
-
 process.stdout.write('\x1Bc'); // \033c
-try {
-	img(join(__dirname, 'cli', 'omri.png'));
-} catch (error) {
-	// ignore
-}
-
 console.log(
 	[
 		'Hi.\nMy name is Omri.'.bold,
@@ -22,4 +13,3 @@ console.log(
 		`I write articles about coding on ${link('Dev.to', 'https://dev.to/omrilotan')}. And maintain ${link('a small website', 'https://omrilotan.com')} with more information.`,
 	].join('\n')
 );
-
