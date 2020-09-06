@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "term-img": "^4.1.0",
+    "term-img": "^5.0.0",
     "terminal-link": "^2.1.1"
   }
 }
