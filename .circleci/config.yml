@@ -4,6 +4,9 @@ jobs:
     working_directory: ~/app
     docker:
       - image: circleci/node:12
+        auth:
+          username: $DOCKER_USER
+          password: $DOCKER_PASS
     steps:
       - checkout
       - restore_cache:
