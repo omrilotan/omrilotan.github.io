@@ -18,7 +18,14 @@
 }
 
 * { margin: 0; padding: 0; }
+html {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 body {
+	max-height: 100%;
 	color: var(--foreground-colour);
 	background: var(--background-colour);
 	font: 100 100%/1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif;
@@ -56,6 +63,7 @@ h1 figure path {
 article {
 	max-width: 1024px;
 	margin: 0 auto;
+	padding: 0 0 3em;
 }
 
 @media (prefers-color-scheme: dark) {
