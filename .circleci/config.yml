@@ -27,8 +27,8 @@ jobs:
             git config --global user.name a1vy &&
             git config --global user.email a01101100vy@gmail.com
       - run:
-          name: Clone master branch
-          command: git clone -b master --single-branch $CIRCLE_REPOSITORY_URL docs
+          name: Clone main branch
+          command: git clone -b main --single-branch $CIRCLE_REPOSITORY_URL docs
       - run:
           name: Clean everything
           command: |
@@ -62,7 +62,7 @@ jobs:
             cd docs &&
             git add . &&
             git commit -m "$(curl -s whatthecommit.com/index.txt)" &&
-            git push origin master --force-with-lease &&
+            git push origin main --force-with-lease &&
             cd -
       - run:
           name: CloufFlare - Purge everything
