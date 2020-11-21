@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:4.0
+FN;LANGUAGE=en;CHARSET=utf-8:Omri Lotan
+ROLE;LANGUAGE=en;CHARSET=utf-8:Web Developer\, SRE.
+NOTE;LANGUAGE=en;CHARSET=utf-8:Hi. I'm Omri.\I code, write, and contribute to open source software.
+PHOTO;VALUE=uri;MEDIATYPE=image/png:https://omrilotan.com/omri.png
+EMAIL:omri@hamadgera.com
+URL:https://omrilotan.com
+URL:https://github.com/omrilotan
+END:VCARD
