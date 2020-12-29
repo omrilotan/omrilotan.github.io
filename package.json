@@ -1,15 +1,18 @@
 {
   "name": "omrilotan",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "I woke up like this",
   "homepage": "https://omrilotan.com",
   "author": "omri",
-  "license": "MIT",
+  "license": "Unlicense",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/omrilotan/omrilotan.github.io.git"
   },
   "scripts": {
+    "prestart": "which parcel || npm i parcel-bundler --no-save",
+    "start": "parcel src/index.pug --out-dir docs",
+    "prebuild": "which parcel || npm i parcel-bundler --no-save",
     "build": "parcel build src/index.pug --out-dir docs --public-url .  --no-content-hash",
     "postbuild": "cp ./src/static/* ./docs",
     "lint": "eslint '.'"
