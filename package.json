@@ -10,19 +10,26 @@
     "url": "git+https://github.com/omrilotan/omrilotan.github.io.git"
   },
   "scripts": {
-    "prestart": "which parcel || npm i parcel-bundler --no-save",
-    "start": "parcel src/index.pug --out-dir docs",
-    "prebuild": "which parcel || npm i parcel-bundler --no-save",
-    "build": "parcel build src/index.pug --out-dir docs --public-url .  --no-content-hash",
+    "prestart": "which parcel || npm i parcel --no-save",
+    "start": "parcel src/index.pug --dist-dir docs",
+    "prebuild": "which parcel || npm i parcel --no-save",
+    "build": "parcel build src/index.pug --dist-dir docs --public-url . --no-content-hash",
     "postbuild": "cp ./src/static/* ./docs",
     "lint": "eslint '.'"
   },
   "bin": "bin.js",
   "devDependencies": {
     "@omrilotan/eslint-config": "^1.3.0",
+    "@parcel/config-default": "^2.0.1",
+    "@parcel/graph": "^2.0.1",
+    "@parcel/packager-raw-url": "^2.0.1",
+    "@parcel/packager-xml": "^2.0.1",
+    "@parcel/transformer-pug": "^2.0.1",
+    "@parcel/transformer-webmanifest": "^2.0.1",
+    "@parcel/transformer-xml": "^2.0.1",
     "eslint": "^7.10.0",
+    "eslint-plugin-import": "^2.25.3",
     "markdown-it": "^11.0.1",
-    "parcel-bundler": "^1.12.4",
     "pug": "^3.0.0"
   },
   "dependencies": {

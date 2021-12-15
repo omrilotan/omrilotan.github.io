@@ -44,4 +44,4 @@ html(lang="en-GB")
 				|  Hi.<br>My name is Omri.
 			include:md content.md
 		script.
-			navigator.onLine && location.protocol.startsWith('https') && 'serviceWorker' in navigator && navigator.serviceWorker.register('./sw.js?ck=v1')
+			navigator.onLine && location.protocol.startsWith('https') && 'serviceWorker' in navigator && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v1`))

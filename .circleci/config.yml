@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:16
         auth:
           username: $DOCKER_USER
           password: $DOCKER_PASS
@@ -44,6 +44,9 @@ jobs:
       - run:
           name: Create page
           command: npm run build
+      - run:
+          name: List files
+          command: ls docs
       - run:
           name: Get mono
           command: git clone git@github.com:omrilotan/mono.git
