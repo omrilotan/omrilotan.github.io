@@ -1,8 +1,6 @@
 {
-    "extends": [
-        "@omrilotan"
-    ],
-    "rules": {
-    	"comma-dangle": 0
-    }
+	"extends": ["@omrilotan"],
+	"rules": {
+		"comma-dangle": 0
+	}
 }

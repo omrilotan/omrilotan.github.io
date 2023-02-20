@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/app
     docker:
-      - image: circleci/node:16
+      - image: cimg/node:current
         auth:
           username: $DOCKER_USER
           password: $DOCKER_PASS
@@ -20,7 +20,7 @@ jobs:
             - ./node_modules
       - run:
           name: Verify syntax
-          command: npm run lint
+          command: npm run format
       - run:
           name: Set user
           command: |

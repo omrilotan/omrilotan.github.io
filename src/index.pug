@@ -2,37 +2,55 @@ doctype html
 html(lang="en-GB")
 	head
 		meta(charset="utf-8")
-		meta(http-equiv="X-UA-Compatible" content="IE=edge, chrome=1")
-		meta(name="viewport" content="width=device-width,minimum-scale=1")
-		meta(name="description" content="I write code. I write about code")
-		meta(name="mobile-web-app-capable" content="yes")
-		meta(name="application-name" content="omrilotan")
-		meta(name="apple-mobile-web-app-capable" content="yes")
-		meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
-		meta(name="apple-mobile-web-app-title" content="omrilotan")
-		meta(itemprop="image" content="./omri-192.png")
-		meta(name="theme-color" content="#FFFFFF")
-		meta(name="msapplication-TileImage" content="./omri-192.png")
-		meta(name="msapplication-TileColor" content="#ffffff")
-		meta(name="msapplication-tap-highlight" content="no")
-		meta(name="apple-mobile-web-app-capable" content="yes")
-		meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
-		meta(name="apple-mobile-web-app-title" content="omrilotan")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge, chrome=1")
+		meta(name="viewport", content="width=device-width,minimum-scale=1")
+		meta(name="description", content="I write code. I write about code")
+		meta(name="mobile-web-app-capable", content="yes")
+		meta(name="application-name", content="omrilotan")
+		meta(name="apple-mobile-web-app-capable", content="yes")
+		meta(
+			name="apple-mobile-web-app-status-bar-style",
+			content="black-translucent"
+		)
+		meta(name="apple-mobile-web-app-title", content="omrilotan")
+		meta(itemprop="image", content="./omri-192.png")
+		meta(name="theme-color", content="#FFFFFF")
+		meta(name="msapplication-TileImage", content="./omri-192.png")
+		meta(name="msapplication-TileColor", content="#ffffff")
+		meta(name="msapplication-tap-highlight", content="no")
+		meta(name="apple-mobile-web-app-capable", content="yes")
+		meta(
+			name="apple-mobile-web-app-status-bar-style",
+			content="black-translucent"
+		)
+		meta(name="apple-mobile-web-app-title", content="omrilotan")
 		base(href="/")
-		link(rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAyMjIANHR0QD///8Ao6OjANra2gDj4+MA7OzsAFtbWwA2NjYAbW1tAD8/PwB2dnYASEhIAH9/fwC2trYAkZGRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFBQAAAAAAAAAAAAAAAAABAwMBBwAAAAAAAAAAAAAFAwMDAwUHAAAAAAAAAAABAwMPBQcDAQAAAAAAAAAAAgMDAwUDAwMFAAAAAAAAAAcDAwMEBQMDBQAAAAAAAAADAwMDAQMDAwMBAQEAAAAAAQcDAwUDAwMDAQMDAAAAAQUBAwUEBQcHAwcFBwAAAAUDBgcEDwEQBAMHDAUAAAAABwUDAwMDAwMDAw4KAAAAAAAMAQMDAwMDAwMIDgAAAAAAAQ0EAwMDAwMQDQcAAAAAAAAFDRAPDgQOCgwAAAAAAAAAAAAOCQsLEAAAAAAAAAAAAAAAAAAAAAAAAAAAAPn/AADwfwAA4D8AAMA/AADAHwAAwB8AAMADAADAAwAAgAMAAIADAADAAwAA4AMAAOADAADwBwAA/B8AAP//AAA=" type="image/x-icon")
-		link(rel="apple-touch-icon" href="./omri-192.png")
-		link(rel="canonical" href="https://omrilotan.com/")
-		link(rel="alternate" href="https://omrilotan.com/" hreflang="en-GB")
-		link(rel="manifest" href="./manifest.webmanifest")
-		link(rel="dns-prefetch" href="https://github.com/")
-		link(rel="dns-prefetch" href="https://medium.com/")
-		link(rel="dns-prefetch" href="https://ci-cd.net/")
-		link(rel="prerender" href="https://omrilotan.com/mono/")
-		link(rel="search" type="application/opensearchdescription+xml" title="Search omrilotan" href="./opensearch.xml")
-		link(rel="me" href="https://github.com/omrilotan")
-		link(rel="author" href="https://github.com/omrilotan/omrilotan.github.io")
-		link(rel="license" href="https://raw.githubusercontent.com/omrilotan/omrilotan.github.io/build/LICENSE")
-		link(rel="vcard" href="./omrilotan.vcf")
+		link(
+			rel="shortcut icon",
+			href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAyMjIANHR0QD///8Ao6OjANra2gDj4+MA7OzsAFtbWwA2NjYAbW1tAD8/PwB2dnYASEhIAH9/fwC2trYAkZGRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFBQAAAAAAAAAAAAAAAAABAwMBBwAAAAAAAAAAAAAFAwMDAwUHAAAAAAAAAAABAwMPBQcDAQAAAAAAAAAAAgMDAwUDAwMFAAAAAAAAAAcDAwMEBQMDBQAAAAAAAAADAwMDAQMDAwMBAQEAAAAAAQcDAwUDAwMDAQMDAAAAAQUBAwUEBQcHAwcFBwAAAAUDBgcEDwEQBAMHDAUAAAAABwUDAwMDAwMDAw4KAAAAAAAMAQMDAwMDAwMIDgAAAAAAAQ0EAwMDAwMQDQcAAAAAAAAFDRAPDgQOCgwAAAAAAAAAAAAOCQsLEAAAAAAAAAAAAAAAAAAAAAAAAAAAAPn/AADwfwAA4D8AAMA/AADAHwAAwB8AAMADAADAAwAAgAMAAIADAADAAwAA4AMAAOADAADwBwAA/B8AAP//AAA=",
+			type="image/x-icon"
+		)
+		link(rel="apple-touch-icon", href="./omri-192.png")
+		link(rel="canonical", href="https://omrilotan.com/")
+		link(rel="alternate", href="https://omrilotan.com/", hreflang="en-GB")
+		link(rel="manifest", href="./manifest.webmanifest")
+		link(rel="dns-prefetch", href="https://github.com/")
+		link(rel="dns-prefetch", href="https://medium.com/")
+		link(rel="dns-prefetch", href="https://ci-cd.net/")
+		link(rel="prerender", href="https://omrilotan.com/mono/")
+		link(
+			rel="search",
+			type="application/opensearchdescription+xml",
+			title="Search omrilotan",
+			href="./opensearch.xml"
+		)
+		link(rel="me", href="https://github.com/omrilotan")
+		link(rel="author", href="https://github.com/omrilotan/omrilotan.github.io")
+		link(
+			rel="license",
+			href="https://raw.githubusercontent.com/omrilotan/omrilotan.github.io/build/LICENSE"
+		)
+		link(rel="vcard", href="./omrilotan.vcf")
 		title ☕️ omrilotan. I woke up like this
 		style
 			include styles.scss
@@ -41,7 +59,8 @@ html(lang="en-GB")
 			h1
 				figure
 					include ./omri.svg
-				|  Hi.<br>My name is Omri.
+				|
+				| Hi.<br>My name is Omri.
 			include:md content.md
 		script.
-			navigator.onLine && location.protocol.startsWith('https') && 'serviceWorker' in navigator && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v1`))
+			navigator.onLine && location.protocol.startsWith("https") && "serviceWorker" in navigator && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v1`));
