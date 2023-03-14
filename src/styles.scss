@@ -5,6 +5,24 @@
 	--link-colour-default: #2980b9;
 	--link-colour-visited: #8e44ad;
 	--link-colour-active: #27ae60;
+	--figure-background: transparent;
+	--font-weight: 100;
+	--font-size: 200%;
+	--title-font-size: 2em;
+	--body-padding: 2em;
+}
+@media (prefers-contrast: more) {
+	:root {
+		--foreground-colour: #000;
+		--background-colour: #fff;
+		--selection-colour: yellow;
+		--link-colour-default: blue;
+		--link-colour-visited: purple;
+		--link-colour-active: green;
+	}
+	body {
+		--font-weight: 300;
+	}
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -14,6 +32,18 @@
 		--link-colour-default: #5cbeff;
 		--link-colour-visited: #ce65fb;
 		--link-colour-active: #47f390;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--figure-background: #fff;
+	}
+}
+@media (max-width: 800px) {
+	:root {
+		--body-padding: 1em;
+		--font-size: 2.5em;
+		--title-font-size: 1.5em;
 	}
 }
 
@@ -31,32 +61,19 @@ body {
 	max-height: 100%;
 	color: var(--foreground-colour);
 	background: var(--background-colour);
-	font: 100 100%/1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue",
+	font: var(--font-weight) var(--font-size)/1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue",
 		"Helvetica", "Lucida Grande", "Arial", sans-serif;
-	padding: 2em;
+	padding: var(--body-padding);
 }
 ::selection {
 	background: var(--selection-colour);
 }
 h1 {
-	font-size: 4em;
+	font-size: var(--title-font-size);
 	margin: 0 0 0.5em;
 }
-h2,
 p {
 	margin: 0 0 1em;
-}
-h2 {
-	font-weight: 100;
-	font-size: 1.8em;
-	letter-spacing: 0.02em;
-}
-h2 a {
-	text-decoration: none;
-	border-bottom: 1px solid currentColor;
-}
-h3 {
-	font-size: 3em;
 }
 a {
 	color: var(--link-colour-default);
@@ -73,6 +90,8 @@ h1 figure {
 	height: 1.25em;
 	display: inline-block;
 	vertical-align: text-top;
+	border-radius: 50%;
+	background: var(--figure-background);
 }
 
 h1 figure path {
@@ -82,23 +101,4 @@ article {
 	max-width: 1024px;
 	margin: 0 auto;
 	padding: 0 0 3em;
-}
-
-@media (prefers-color-scheme: dark) {
-	figure {
-		background: #fff;
-		border-radius: 50%;
-	}
-}
-
-@media (max-width: 800px) {
-	body {
-		padding: 1em;
-	}
-	h1 {
-		font-size: 2.5em;
-	}
-	h3 {
-		font-size: 2em;
-	}
 }
