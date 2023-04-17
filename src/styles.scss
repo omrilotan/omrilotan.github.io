@@ -1,6 +1,7 @@
 :root {
 	--foreground-colour: #151515;
 	--background-colour: #fff;
+	--page-background: linear-gradient(125deg, #ffefba, #ffffff);
 	--selection-colour: #d2e9f3;
 	--link-colour-default: #2980b9;
 	--link-colour-visited: #8e44ad;
@@ -11,23 +12,11 @@
 	--title-font-size: 2em;
 	--body-padding: 2em;
 }
-@media (prefers-contrast: more) {
-	:root {
-		--foreground-colour: #000;
-		--background-colour: #fff;
-		--selection-colour: yellow;
-		--link-colour-default: blue;
-		--link-colour-visited: purple;
-		--link-colour-active: green;
-	}
-	body {
-		--font-weight: 300;
-	}
-}
 @media (prefers-color-scheme: dark) {
 	:root {
 		--foreground-colour: #fff;
 		--background-colour: #151515;
+		--page-background: linear-gradient(125deg, #0f2027, #203a43, #2c5364);
 		--selection-colour: #065273;
 		--link-colour-default: #5cbeff;
 		--link-colour-visited: #ce65fb;
@@ -37,6 +26,20 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--figure-background: #fff;
+	}
+}
+@media (prefers-contrast: more) {
+	:root {
+		--foreground-colour: #000;
+		--background-colour: #fff;
+		--page-background: #fff;
+		--selection-colour: yellow;
+		--link-colour-default: blue;
+		--link-colour-visited: purple;
+		--link-colour-active: green;
+	}
+	body {
+		--font-weight: 300;
 	}
 }
 @media (max-width: 800px) {
@@ -61,8 +64,10 @@ body {
 	max-height: 100%;
 	color: var(--foreground-colour);
 	background: var(--background-colour);
-	font: var(--font-weight) var(--font-size)/1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue",
-		"Helvetica", "Lucida Grande", "Arial", sans-serif;
+	background: var(--page-background);
+	font: var(--font-weight) var(--font-size) / 1.4 -apple-system,
+		"BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Lucida Grande",
+		"Arial", sans-serif;
 	padding: var(--body-padding);
 }
 ::selection {
