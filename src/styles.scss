@@ -42,6 +42,17 @@
 		--font-weight: 300;
 	}
 }
+@media print {
+	:root {
+		--foreground-colour: #000;
+		--background-colour: #fff;
+		--page-background: #fff;
+		--selection-colour: #454545;
+		--link-colour-default: #454545;
+		--link-colour-visited: #454545;
+		--link-colour-active: #454545;
+	}
+}
 @media (max-width: 800px) {
 	:root {
 		--body-padding: 1em;
