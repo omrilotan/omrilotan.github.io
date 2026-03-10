@@ -1,0 +1,75 @@
+name: Website
+
+on:
+  push:
+    branches:
+      - build
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: current
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ./node_modules
+          key: dependency-cache-${{ hashFiles('package.json') }}
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Verify syntax
+        run: npm run format
+
+      - name: Set user
+        run: |
+          git config --global user.name a1vy
+          git config --global user.email a01101100vy@gmail.com
+
+      - name: Clone main branch
+        run: git clone -b main --single-branch https://x-access-token:${GITHUB_TOKEN}@github.com/${REPOSITORY}.git docs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+
+      - name: Clean everything
+        run: |
+          cd docs
+          ls -a | grep -v .git | grep -v .github | grep -vE "^\.$|^\.\.$" | xargs rm -rf
+          cd -
+
+      - name: Set NPM tokens
+        run: echo -e "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish cli
+        run: npx published --latest-branch build
+
+      - name: Create page
+        run: npm run build
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          cd docs
+          git diff --exit-code && echo "no_changes=true" >> $GITHUB_OUTPUT
+          cd -
+
+      - name: Commit
+        if: steps.check_changes.outputs.no_changes != 'true'
+        run: |
+          cd docs
+          git add .
+          git commit -m "$(curl -s https://whatthecommit.com/index.txt)"
+          git push origin main --force-with-lease
+          cd -

@@ -11,8 +11,8 @@
 
 	self.addEventListener("install", (event) =>
 		event.waitUntil(
-			caches.open(cacheKey).then((cache) => cache.addAll(CACHED_FILES))
-		)
+			caches.open(cacheKey).then((cache) => cache.addAll(CACHED_FILES)),
+		),
 	);
 
 	self.addEventListener("activate", (event) =>
@@ -22,16 +22,16 @@
 				.then((keys) =>
 					keys
 						.filter((key) => key !== cacheKey)
-						.forEach((key) => caches.delete(key))
-				)
-		)
+						.forEach((key) => caches.delete(key)),
+				),
+		),
 	);
 
 	self.addEventListener("fetch", (event) =>
 		event.respondWith(
 			caches
 				.match(event.request)
-				.then((response) => response || fetch(event.request))
-		)
+				.then((response) => response || fetch(event.request)),
+		),
 	);
 })();

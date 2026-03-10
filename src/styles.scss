@@ -8,8 +8,8 @@
 	--link-colour-active: #27ae60;
 	--figure-background: transparent;
 	--font-weight: 100;
-	--font-size: 200%;
-	--title-font-size: 2em;
+	--font-size: 150%;
+	--title-font-size: 2.5em;
 	--body-padding: 2em;
 }
 @media (prefers-color-scheme: dark) {
@@ -56,8 +56,6 @@
 @media (max-width: 800px) {
 	:root {
 		--body-padding: 1em;
-		--font-size: 2.5em;
-		--title-font-size: 1.5em;
 	}
 }
 
@@ -76,9 +74,14 @@ body {
 	color: var(--foreground-colour);
 	background: var(--background-colour);
 	background: var(--page-background);
-	font: var(--font-weight) var(--font-size) / 1.4 -apple-system,
-		"BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Lucida Grande",
-		"Arial", sans-serif;
+	font:
+		var(--font-weight) var(--font-size) / 1.4 -apple-system,
+		"BlinkMacSystemFont",
+		"Helvetica Neue",
+		"Helvetica",
+		"Lucida Grande",
+		"Arial",
+		sans-serif;
 	padding: var(--body-padding);
 }
 ::selection {
@@ -101,20 +104,16 @@ a:active {
 	color: var(--link-colour-active);
 }
 
-h1 figure {
-	width: 1.25em;
-	height: 1.25em;
-	display: inline-block;
-	vertical-align: text-top;
-	border-radius: 50%;
-	background: var(--figure-background);
-}
-
-h1 figure path {
-	fill: #333;
-}
-article {
-	max-width: 1024px;
-	margin: 0 auto;
-	padding: 0 0 3em;
+h1 {
+	figure {
+		width: 1.25em;
+		height: 1.25em;
+		display: inline-block;
+		vertical-align: text-top;
+		border-radius: 50%;
+		background: var(--figure-background);
+		path {
+			fill: #333;
+		}
+	}
 }

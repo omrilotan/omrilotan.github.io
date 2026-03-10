@@ -1,8 +1,8 @@
-const MarkdownIt = require("markdown-it");
+import MarkdownIt from "markdown-it";
 
 const md = new MarkdownIt();
 
-module.exports = {
+export default {
 	filters: {
 		md: (text) => md.render(text),
 	},
