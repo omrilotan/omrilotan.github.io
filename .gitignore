@@ -1,8 +1,0 @@
-.*
-!.editorconfig
-!.gitattributes
-!.npmrc
-!.circleci
-*.log
-node_modules
-docs
