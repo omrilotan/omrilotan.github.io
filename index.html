@@ -100,19 +100,177 @@
     }
 
     html {
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      display: flex
+      scroll-behavior: smooth
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
     }
 
     body {
-      max-height: 100%;
       color: var(--foreground-colour);
       background: var(--background-colour);
       background: var(--page-background);
       font: var(--font-weight) var(--font-size) / 1.4 -apple-system, "BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Lucida Grande", "Arial", sans-serif;
-      padding: var(--body-padding)
+      background-attachment: fixed
+    }
+
+    section {
+      box-sizing: border-box;
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: var(--body-padding);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center
+    }
+
+    section > * {
+      width: 100%;
+      max-width: 60rem
+    }
+
+    #hello {
+      position: relative
+    }
+
+    #hello > a {
+      position: absolute;
+      bottom: 1em;
+      left: 50%;
+      width: auto;
+      transform: translateX(-50%);
+      text-decoration: none;
+      font-size: 80%;
+      opacity: .6
+    }
+
+    h2 {
+      font-size: 1.25em;
+      font-weight: inherit;
+      margin: 0 0 1em;
+      opacity: .7
+    }
+
+    .projects {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25em
+    }
+
+    .projects li {
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+      padding: 1em;
+      font-size: 60%;
+      border: 1px solid color-mix(in srgb, var(--foreground-colour) 15%, transparent);
+      border-radius: .75em;
+      background: color-mix(in srgb, var(--background-colour) 55%, transparent)
+    }
+
+    .projects li {
+      grid-column: span 3
+    }
+
+    .projects .wide {
+      grid-column: span 4
+    }
+
+    .projects .tall {
+      grid-row: span 2
+    }
+
+    .projects .wider {
+      grid-column: span 8
+    }
+
+    @media (width<=800px) {
+      .projects .tall {
+        grid-row: auto
+      }
+
+      .projects li,
+      .projects .wide {
+        grid-column: 1 / -1
+      }
+    }
+
+    .projects h3 {
+      font-size: 1.25em;
+      font-weight: 400
+    }
+
+    .projects p {
+      margin: 0
+    }
+
+    .projects pre {
+      margin-top: auto
+    }
+
+    .shots {
+      margin-top: auto;
+      display: flex;
+      gap: .5em;
+      align-items: flex-start
+    }
+
+    .shots img {
+      flex: 1;
+      min-width: 0;
+      height: auto;
+      border: 1px solid color-mix(in srgb, var(--foreground-colour) 20%, transparent);
+      border-radius: .4em
+    }
+
+    .projects .media {
+      display: flex;
+      justify-content: center;
+      margin-top: auto
+    }
+
+    .projects .media img {
+      width: 100%;
+      height: auto;
+      border: 1px solid color-mix(in srgb, var(--foreground-colour) 20%, transparent);
+      border-radius: .4em
+    }
+
+    .points {
+      margin: 0;
+      padding-left: 1.25em;
+      display: grid;
+      gap: .35em
+    }
+
+    .projects .points li {
+      display: list-item;
+      padding: 0;
+      border: 0;
+      background: none;
+      font-size: 100%
+    }
+
+    .projects .media .phone {
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      max-height: 30rem
+    }
+
+    pre {
+      margin: 0;
+      padding: .75em;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font: 85% / 1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      border-radius: .4em;
+      background: color-mix(in srgb, var(--foreground-colour) 8%, transparent)
     }
 
     ::selection {
@@ -155,6 +313,7 @@
       }
     }
   </style>
+  <section id=hello>
   <article>
     <h1>
       <figure>
@@ -165,6 +324,63 @@
     </h1>
     <p>I <a href=https://github.com/omrilotan>code</a>, <a href=https://omrilotan.medium.com>write</a>, and <a href="https://github.com/search?q=is%3Apr+author%3Aomrilotan+-user%3Aomrilotan+-user%3Afiverr&amp;type=Issues">contribute</a> to open source software. </p>
   </article>
+  <a href=#projects aria-label="Recent projects">Recent projects ↓</a>
+  </section>
+  <section id=projects>
+    <h2>Recent projects. All open source.</h2>
+    <ul class=projects>
+      <li class=wide>
+        <h3><a href=https://omrilotan.com/squidread/>Squidread</a></h3>
+        <p>A fast, distraction-free EPUB reader for Android, built for e-ink. No internet permission, no accounts, no ads.</p>
+        <a class=shots href=https://omrilotan.com/squidread/>
+          <img src=projects/squidread-reader.png width=536 height=724 loading=lazy alt="Squidread reading view">
+          <img src=projects/squidread-dark.png width=536 height=724 loading=lazy alt="Squidread dark theme">
+        </a>
+      </li>
+      <li class=wide>
+        <h3><a href=https://community-distributed-library.com/>Community Distributed Library</a></h3>
+        <p>Neighbours lend each other what they already own. Each street runs its own library, with a catalogue, requests, handoffs and reminders.</p>
+        <ul class=points>
+          <li>One codebase, many independent libraries</li>
+          <li>Books or things, invite-only</li>
+          <li>API, MCP server and webhooks</li>
+          <li>Runs on Cloudflare</li>
+        </ul>
+        <a class=media href=https://community-distributed-library.com/ tabindex=-1 aria-hidden=true><img src=projects/distributed-library.jpg width=1280 height=657 loading=lazy alt="Community Distributed Library home page: a bench on a street with a ladder, a tent and books"></a>
+      </li>
+      <li class=wide>
+        <h3><a href=https://omrilotan.com/internet-speed-monitor/>Internet Speed Monitor</a></h3>
+        <p>Desktop app, written in Rust. Tests your connection on a schedule and charts download, upload and ping. Data stays local.</p>
+        <a class=media href=https://omrilotan.com/internet-speed-monitor/ tabindex=-1 aria-hidden=true><img src=projects/internet-speed-monitor.png width=960 height=800 loading=lazy alt="Internet Speed Monitor showing latest results, medians and a chart"></a>
+      </li>
+      <li class="wide tall">
+        <h3><a href=https://do.omrilotan.com>do</a></h3>
+        <p>Something fun to do with kids. No preparation. Draw a random activity.</p>
+        <a class=media href=https://do.omrilotan.com tabindex=-1 aria-hidden=true><img class=phone src=projects/do.jpg width=389 height=640 loading=lazy alt="do on a phone: a button that suggests something fun to do with kids"></a>
+      </li>
+      <li class=wide>
+        <h3><a href=https://omrilotan.com/http-mod-sets/>HTTP Mod Sets</a></h3>
+        <p>Browser extension. Rewrite request and response headers and bodies, or block requests. Zero data collection.</p>
+        <a class=media href=https://omrilotan.com/http-mod-sets/ tabindex=-1 aria-hidden=true><img src=projects/http-mod-sets.png width=960 height=600 loading=lazy alt="HTTP Mod Sets popup showing three enabled sets"></a>
+      </li>
+      <li class=wide>
+        <h3><a href=https://isbot.js.org>isbot</a></h3>
+        <p>Detect bots, crawlers, and spiders from the user agent string.</p>
+<pre>import { isBot } from "isbot";
+
+isBot(navigator.userAgent);
+// false</pre>
+      </li>
+      <li class="wide wider">
+        <h3><a href=https://omrilotan.com/react-error-decoder/>react-error-decoder</a></h3>
+        <p>Turn minified React errors back into full messages.</p>
+<pre>import { decode } from "react-error-decoder";
+
+decode("Minified React error #130; …");
+// "Element type is invalid: …"</pre>
+      </li>
+    </ul>
+  </section>
   <script>
-    navigator.onLine && location.protocol.startsWith("https") && "serviceWorker" in navigator && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v1`));
+    navigator.onLine && location.protocol.startsWith("https") && "serviceWorker" in navigator && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v2`));
   </script>
