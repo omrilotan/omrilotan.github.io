@@ -382,5 +382,8 @@ decode("Minified React error #130; …");
     </ul>
   </section>
   <script>
-    navigator.onLine && location.protocol.startsWith("https") && "serviceWorker" in navigator && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v2`));
+    if (location.protocol.startsWith("https") && "serviceWorker" in navigator) {
+      navigator.onLine && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v3`), { updateViaCache: "none" });
+      navigator.serviceWorker.ready.then(({ active }) => active.postMessage({ installed: matchMedia("(display-mode: standalone)").matches || navigator.standalone === true }));
+    }
   </script>
