@@ -23,7 +23,19 @@
 		<span id="state" class="state">Searching</span>
 		<script>
 			(async () => {
-				const name = window.location.pathname
+				const { pathname, search, hash } = window.location;
+				if (!pathname.endsWith("/") && !pathname.endsWith(".html")) {
+					const candidate = `${pathname}/`;
+					try {
+						const res = await fetch(candidate, { method: "HEAD" });
+						if (res.ok) {
+							window.location.replace(candidate + search + hash);
+							return;
+						}
+					} catch (error) {}
+				}
+
+				const name = pathname
 					.split("/")
 					.filter((i) => !!i)
 					.shift();
