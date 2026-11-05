@@ -155,6 +155,85 @@
       opacity: .7
     }
 
+    .projects-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .5em 1.5em;
+      margin: 0 0 1em;
+
+      & h2 {
+        margin: 0
+      }
+    }
+
+    /* "a.tip" beats the a:visited and a:active colours below */
+    a.tip,
+    a.tip:visited,
+    a.tip:active {
+      --tip-colour: #16a085;
+      display: inline-flex;
+      align-items: center;
+      gap: .45em;
+      padding: .35em 1em .35em .55em;
+      border-radius: 999px;
+      background: var(--tip-colour);
+      box-shadow: 0 .15em 0 color-mix(in srgb, var(--tip-colour) 60%, #000);
+      color: #fff;
+      font-size: 75%;
+      font-weight: 400;
+      text-decoration: none;
+      transition: transform .15s, box-shadow .15s;
+
+      & svg {
+        width: auto;
+        height: 1.4em;
+        transform-origin: 50% 80%;
+        /* Every few seconds on its own, a little wiggle */
+        animation: tip-idle 7s ease-in-out 2s infinite
+      }
+    }
+
+    a.tip:hover {
+      transform: translateY(-.1em);
+      box-shadow: 0 .25em 0 color-mix(in srgb, var(--tip-colour) 60%, #000);
+
+      & svg {
+        animation: tip-wiggle .6s ease-in-out
+      }
+    }
+
+    a.tip:active {
+      transform: translateY(.1em);
+      box-shadow: 0 .05em 0 color-mix(in srgb, var(--tip-colour) 60%, #000)
+    }
+
+    a.tip:focus-visible {
+      outline: 2px solid var(--link-colour-default);
+      outline-offset: 3px
+    }
+
+    @keyframes tip-wiggle {
+      25% { transform: rotate(-12deg) }
+      50% { transform: rotate(10deg) }
+      75% { transform: rotate(-6deg) }
+    }
+
+    @keyframes tip-idle {
+      0%, 88%, 100% { transform: rotate(0) }
+      91% { transform: rotate(-12deg) }
+      94% { transform: rotate(10deg) }
+      97% { transform: rotate(-6deg) }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      a.tip,
+      a.tip svg {
+        transition: none;
+        animation: none !important
+      }
+    }
+
     .projects {
       list-style: none;
       display: grid;
@@ -322,12 +401,18 @@
         </svg>
       </figure> Hi. <br>My name is Omri.
     </h1>
-    <p>I <a href=https://github.com/omrilotan>code</a>, <a href=https://omrilotan.medium.com>write</a>, and <a href="https://github.com/search?q=is%3Apr+author%3Aomrilotan+-user%3Aomrilotan+-user%3Afiverr&amp;type=Issues">contribute</a> to open source software. </p>
+    <p>I <a href=https://github.com/omrilotan>code</a>, <a href=https://omrilotan.medium.com>write</a>, and <a href=#projects aria-label="Some projects">make free software</a>.</p>
   </article>
   <a href=#projects aria-label="Some projects">Some projects ↓</a>
   </section>
   <section id=projects>
-    <h2>Some projects. All open source.</h2>
+    <header class=projects-head>
+      <h2>Some projects. All open source.</h2>
+      <a class=tip href=https://ko-fi.com/omrilotan target=_blank rel=noopener>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241 194" fill="none"><mask id="ko-fi-cup" width="242" height="194" x="-1" y="0" maskUnits="userSpaceOnUse" style="mask-type:luminance"><path fill="#fff" d="M240.469.959H-.006v192.959H240.47z"/></mask><g mask="url(#ko-fi-cup)"><path fill="#fff" d="M96.134 193.911c-35.003 0-63.474-15.655-80.162-44.082C1.198 124.912-.006 97.923-.006 67.766c0-17.878 5.379-33.445 15.547-45.02 9.345-10.63 22.586-17.517 37.29-19.392C70.287 1.143 91.986.959 114.546.959c36.714 0 47.085.45 61.53 1.894 19.215 1.907 35.383 9.079 46.749 20.743 11.544 11.847 17.645 27.666 17.645 45.767v3.636c0 30.886-20.648 56.734-49.423 63.76-2.148 5.068-4.809 10.112-7.957 15.078l-.083.127c-10.137 15.668-33.964 41.954-79.605 41.954h-7.273z"/><path fill="#fff" d="M174.568 17.977c-13.641-1.362-23.188-1.818-60.016-1.818-23.644 0-43.651.228-59.788 2.274-21.37 2.731-39.558 19.096-39.558 49.334 0 30.24 1.59 53.655 13.868 74.34 13.869 23.644 37.056 36.6 67.067 36.6h7.273c36.828 0 56.836-19.551 66.839-35.009 4.321-6.824 7.501-13.64 9.548-20.464 26.146-2.274 45.469-23.872 45.469-50.24v-3.636c0-28.415-18.639-48.194-50.696-51.38z"/><path fill="#202020" d="M15.198 67.767c0-30.238 18.189-46.603 39.558-49.334 16.143-2.046 36.15-2.274 59.788-2.274 36.828 0 46.375.456 60.015 1.818 32.058 3.18 50.696 22.96 50.696 51.38v3.637c0 26.375-19.323 47.972-45.469 50.24-2.046 6.824-5.227 13.64-9.548 20.464-10.003 15.458-30.01 35.009-66.838 35.009h-7.274c-30.01 0-53.198-12.956-67.066-36.6-12.279-20.685-13.869-43.65-13.869-74.34"/><path fill="#fff" d="M32.247 67.99c0 29.327 1.818 48.194 11.366 65.699 10.91 20.235 30.689 27.964 53.199 27.964h7.045c29.554 0 43.879-14.324 51.836-26.824 3.865-6.367 7.273-13.412 9.091-22.282l1.363-5.683h8.185c18.189 0 33.876-14.774 33.876-33.647v-3.409c0-21.141-13.184-32.285-36.15-35.01-12.956-1.133-20.686-1.59-57.52-1.59-24.778 0-42.51.228-55.923 2.275-18.867 2.73-26.374 13.412-26.374 32.507"/><path fill="#202020" d="M166.158 83.68c0 2.73 2.046 4.777 5.683 4.777 11.594 0 17.961-6.595 17.961-17.505s-6.367-17.732-17.961-17.732c-3.637 0-5.683 2.046-5.683 4.776v25.69z"/><path fill="#ff5a16" d="M54.532 82.32c0 13.412 7.501 25.006 17.049 34.104 6.367 6.138 16.37 12.506 23.188 16.598 2.046 1.135 4.092 1.819 6.367 1.819 2.73 0 4.998-.684 6.823-1.819 6.823-4.092 16.82-10.46 22.96-16.598 9.775-9.092 17.276-20.686 17.276-34.104 0-14.553-10.909-27.508-26.596-27.508-9.319 0-15.687 4.776-20.463 11.365-4.321-6.595-10.91-11.366-20.236-11.366-15.915 0-26.374 12.956-26.374 27.509"/></g></svg>
+        Tip me
+      </a>
+    </header>
     <ul class=projects>
       <li class=wide>
         <h3><a href=https://community-distributed-library.com/>Community Distributed Library</a></h3>
@@ -341,6 +426,16 @@
         <a class=media href=https://community-distributed-library.com/ tabindex=-1 aria-hidden=true><img src=projects/distributed-library.jpg width=1280 height=657 loading=lazy alt="Community Distributed Library home page: a bench on a street with a ladder, a tent and books"></a>
       </li>
       <li class=wide>
+        <h3><a href=https://walk.omrilotan.com/>Walk</a></h3>
+        <p>Control your walking pad from the browser. No install, no account needed. Optional cloud sync and AI agent connection.</p>
+        <a class=media href=https://walk.omrilotan.com/ tabindex=-1 aria-hidden=true><img src=projects/walk.jpg width=1280 height=853 loading=lazy alt="A walking pad under a standing desk, with Walk open on the monitor mid-walk"></a>
+      </li>
+      <li class=wide>
+        <h3><a href=https://omrilotan.com/internet-speed-monitor/>Internet Speed Monitor</a></h3>
+        <p>Desktop app, written in Rust. Tests your connection on a schedule and charts download, upload and ping. Data stays local.</p>
+        <a class=media href=https://omrilotan.com/internet-speed-monitor/ tabindex=-1 aria-hidden=true><img src=projects/internet-speed-monitor.png width=960 height=800 loading=lazy alt="Internet Speed Monitor showing latest results, medians and a chart"></a>
+      </li>
+      <li class=wide>
         <h3><a href=https://omrilotan.com/squidread/>Squidread</a></h3>
         <p>A fast, distraction-free EPUB reader for Android, built for e-ink. No internet permission, no accounts, no ads.</p>
         <a class=shots href=https://omrilotan.com/squidread/>
@@ -349,24 +444,14 @@
         </a>
       </li>
       <li class=wide>
-        <h3><a href=https://omrilotan.com/internet-speed-monitor/>Internet Speed Monitor</a></h3>
-        <p>Desktop app, written in Rust. Tests your connection on a schedule and charts download, upload and ping. Data stays local.</p>
-        <a class=media href=https://omrilotan.com/internet-speed-monitor/ tabindex=-1 aria-hidden=true><img src=projects/internet-speed-monitor.png width=960 height=800 loading=lazy alt="Internet Speed Monitor showing latest results, medians and a chart"></a>
+        <h3><a href=https://omrilotan.com/http-mod-sets/>HTTP Mod Sets</a></h3>
+        <p>Browser extension. Rewrite request and response headers and bodies, or block requests. Zero data collection.</p>
+        <a class=media href=https://omrilotan.com/http-mod-sets/ tabindex=-1 aria-hidden=true><img src=projects/http-mod-sets.png width=960 height=600 loading=lazy alt="HTTP Mod Sets popup showing three enabled sets"></a>
       </li>
       <li class="wide tall">
         <h3><a href=https://do.omrilotan.com>do</a></h3>
         <p>Something fun to do with kids. No preparation. Draw a random activity.</p>
         <a class=media href=https://do.omrilotan.com tabindex=-1 aria-hidden=true><img class=phone src=projects/do.jpg width=389 height=640 loading=lazy alt="do on a phone: a button that suggests something fun to do with kids"></a>
-      </li>
-      <li class=wide>
-        <h3><a href=https://omrilotan.com/http-mod-sets/>HTTP Mod Sets</a></h3>
-        <p>Browser extension. Rewrite request and response headers and bodies, or block requests. Zero data collection.</p>
-        <a class=media href=https://omrilotan.com/http-mod-sets/ tabindex=-1 aria-hidden=true><img src=projects/http-mod-sets.png width=960 height=600 loading=lazy alt="HTTP Mod Sets popup showing three enabled sets"></a>
-      </li>
-      <li class=wide>
-        <h3><a href=https://walk.omrilotan.com/>Walk</a></h3>
-        <p>Control your walking pad from the browser. No install, no account needed. Optional cloud sync and AI agent connection.</p>
-        <a class=media href=https://walk.omrilotan.com/ tabindex=-1 aria-hidden=true><img src=projects/walk.jpg width=1280 height=853 loading=lazy alt="A walking pad under a standing desk, with Walk open on the monitor mid-walk"></a>
       </li>
       <li class=wide>
         <h3><a href=https://isbot.js.org>isbot</a></h3>
@@ -386,9 +471,3 @@ decode("Minified React error #130; …");
       </li>
     </ul>
   </section>
-  <script>
-    if (location.protocol.startsWith("https") && "serviceWorker" in navigator) {
-      navigator.onLine && navigator.serviceWorker.register(new URL(`${new URL(window.location).origin}/sw.js?ck=v3`), { updateViaCache: "none" });
-      navigator.serviceWorker.ready.then(({ active }) => active.postMessage({ installed: matchMedia("(display-mode: standalone)").matches || navigator.standalone === true }));
-    }
-  </script>
